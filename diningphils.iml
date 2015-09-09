@@ -9,7 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: org.clojure:clojure:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.clojure:clojure:1.7.0" level="project" />
     <orderEntry type="library" name="Maven: org.clojure:core.async:0.1.346.0-17112a-alpha" level="project" />
     <orderEntry type="library" name="Maven: org.clojure:tools.analyzer.jvm:0.1.0-beta12" level="project" />
     <orderEntry type="library" name="Maven: org.clojure:tools.analyzer:0.1.0-beta12" level="project" />
