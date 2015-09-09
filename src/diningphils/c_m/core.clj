@@ -74,25 +74,22 @@
 
 (def cmd-channels
   "A vector of channels on which to receive control commands - one for each philosopher thread"
-  (vec (for [phil-id (range phil-count)] (async/chan 1))))
+  (vec (map (fn [i] (async/chan 1)) (range phil-count))))
 
 ;; Status printing
 (def pr-phils
   "The phil-ids to include in pr-status tracing"
   (set (range phil-count)))
 
+(defn line-escape [line] (str "\033[" line ";0H\033[K"))
+
 (defn pr-status
   "Send a status string down the status channel, but only if we are on a philosopher thread whose *phil-id* is in
   pr-phils"
   [& args]
   (if (contains? pr-phils *phil-id*)
-    (let [
-           esc-seq (str "\033[" (inc *phil-id*) ";0H\033[K")
-;           esc-seq ""
-           ]
-      (async/>!! status-chan (apply str esc-seq *phil-name* "(" *phil-id* "): " args))
-      )))
-
+    (async/>!! status-chan (apply str (line-escape (+ 3 *phil-id*)) *phil-name* "(" *phil-id* "): " args))
+    ))
 
 (defn get-status [] (async/<!! status-chan))
 
@@ -108,7 +105,7 @@
 
 (defn dump-state
   []
-  (for [phil-id (range phil-count)] (dump-state-for phil-id)))
+  (doall (map #(dump-state-for %) (range phil-count))))
 
 ;; Utility funcs
 (defn get-food
@@ -166,15 +163,14 @@
 
 (def forks
   "A vector of atoms representing each fork - it's current holder and dirty state"
-  (vec (for
-         [fork-id (range phil-count)]
-         (atom
-           (if (zero? fork-id)
+  (vec (map
+         #(atom
+           (if (zero? %)
              ;; All forks are dirty
              ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
              ;; otherwise the fork is owned by the same phil-id
              {:owner max-phil-id :dirty? true}
-             {:owner fork-id :dirty? true})))))
+             {:owner % :dirty? true})) (range phil-count))))
 
 (defn nth-fork
   [fork-id]
@@ -254,6 +250,8 @@
   (future-value-on *state-chan* {:cmd :hungry} (rand-int (:max-think-duration parameters)))
   )
 
+(declare internal-state)
+
 (defn done []
   "Relax - the food is all gone, and we are done. We won't get hungry anymore, but we can still answer requests for
   forks"
@@ -276,14 +274,9 @@
   []
   (str
     "state=" *phil-state*
-    ", food-left=" @food-bowl
-;    ", request-flags=" *request-flags*
-;    ", left-fork=" *left-fork*
-;    ", right-fork=" *right-fork*
     ", holds-request?=" [(holds-request? *left-fork*) (holds-request? *right-fork*)]
     ", has-fork?=" [(has-fork? *left-fork*) (has-fork? *right-fork*)]
     ", dirty?=" [(dirty? *left-fork*) (dirty? *right-fork*)]
-;    ", cmd-chan=" *cmd-chan*
     ))
 
 ;; Philosopher behaviors
@@ -382,6 +375,16 @@
       *run-flag* true]
     (fn)))
 
+
+(defn show-state
+  "Show my running state."
+  []
+  (async/>!! status-chan (str (line-escape 1) "Food left: " @food-bowl))
+  (async/>!! status-chan
+    (apply str (line-escape (+ 3 *phil-id*)) *phil-name* "(" *phil-id* "): " (internal-state)))
+
+  (async/>!! status-chan (line-escape 10)))
+
 (defn run-philosopher
   "Core philosopher loop. Initialize, then receive state change messages and act on the new state. Do this until we run
    out of food"
@@ -392,20 +395,23 @@
         (think) ;; All start off thinking
         (while *run-flag*
           (do
+            (show-state)
             (set-next-state)
             (state-changed)))
-        (pr-status "exit")
+        (show-state)
         (catch Throwable ex
           (println "Exception in " (nth philosophers *phil-id* ": " ex)))))))
 
+(defn clear-screen []
+  (print "\033[2J"))
+
 (defn start
   []
-  (print "\033[2J")
+  (clear-screen)
   (future (while true (println (get-status))))
   (doseq
     [phil-id (range phil-count)]
-    (future (run-philosopher phil-id)))
-  (print "\033[10;0f"))
+    (future (run-philosopher phil-id))))
 
 (defn stop-phil [phil-id]
   (send-command phil-id :stop))
@@ -413,4 +419,5 @@
 (defn stop []
   (for [phil-id (range phil-count)] (stop-phil phil-id)))
 
-(start)
+(def pr-phils #{})  ;; Disbale pr-status
+;(start)
