@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
@@ -50,7 +49,7 @@
       <file leaf-file-name="workspace.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10815">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11085">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -89,6 +88,7 @@
         <option value="$PROJECT_DIR$/src/diningphils/c-m/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m/tests.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
+        <option value="$PROJECT_DIR$/.idea/workspace.xml" />
       </list>
     </option>
   </component>
