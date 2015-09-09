@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/diningphils/res-hi.clj" afterPath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
@@ -499,7 +497,8 @@
     </option>
     <MESSAGE value="First working version" />
     <MESSAGE value="Code improvements, better state display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code improvements, better state display" />
+    <MESSAGE value="File re-organization" />
+    <option name="LAST_COMMIT_MESSAGE" value="File re-organization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
