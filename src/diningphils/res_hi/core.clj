@@ -16,7 +16,6 @@
 ;; until all the food is gone. The state map holds the eating state, the forks to the left and right of the philosopher,
 ;; and a food amount.
 ;;
-;;
 ;; Edsger Dijkstra's famous dining philosophers problem, solved using the resource hierarchy algorithm and Clojure's STM
 ;;
 ;; The forks are a vector of refs that hold nil indicating the fork is free, or an integer id for the current eater holding it.
@@ -30,7 +29,7 @@
 ;; (start)
 ;;
 
-(ns diningphils.res-hi)
+(ns diningphils.res-hi.core)
 
 (def parameters
   {

@@ -19,7 +19,6 @@
 ;; until all the food is gone. The state map holds the eating state, the forks to the left and right of the philosopher,
 ;; and a food amount.
 ;;
-;;
 ;; Edsger Dijkstra's famous dining philosophers problem, solved using the using Chandy-Misra algorithm and Closure agents
 ;;
 ;; See the Chandry-Misra paper (C&M) at https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
