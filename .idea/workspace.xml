@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/diningphils/c_m/tests.clj" afterPath="$PROJECT_DIR$/test/diningphills/c_m/tests.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
@@ -40,7 +39,7 @@
       <file leaf-file-name="tests.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6363636" vertical-offset="67" max-vertical-offset="825">
+            <state vertical-scroll-proportion="0.07024793" vertical-offset="341" max-vertical-offset="825">
               <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
               <folding />
             </state>
@@ -508,7 +507,8 @@
     <MESSAGE value="First working version" />
     <MESSAGE value="Code improvements, better state display" />
     <MESSAGE value="File re-organization" />
-    <option name="LAST_COMMIT_MESSAGE" value="File re-organization" />
+    <MESSAGE value="File re-organization again" />
+    <option name="LAST_COMMIT_MESSAGE" value="File re-organization again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -653,7 +653,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6363636" vertical-offset="67" max-vertical-offset="825">
+        <state vertical-scroll-proportion="0.07024793" vertical-offset="341" max-vertical-offset="825">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding />
         </state>
