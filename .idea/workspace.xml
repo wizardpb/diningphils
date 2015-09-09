@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="First working version">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/c_m/tests.clj" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/diningphils/c-m/core.clj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/diningphils/c-m/tests.clj" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_clojure_1_6_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_clojure_1_7_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diningphils.iml" afterPath="$PROJECT_DIR$/diningphils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
