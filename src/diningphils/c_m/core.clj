@@ -62,7 +62,6 @@
 (def ^:dynamic *phil-name* nil)           ;; Philosopher name
 (def ^:dynamic *phil-id* nil)             ;; Philosopher ID - an integer 0 - max-phil-id
 (def ^:dynamic *phil-state* nil)          ;; Philosopher state: :thinkng, :eating, :hungry
-;(def ^:dynamic *food-left* nil)           ;; The amount of food left. Everything stops when this = 0
 (def ^:dynamic *left-fork* nil)           ;; Id of my left-hand fork
 (def ^:dynamic *right-fork* nil)           ;; Id of my right-hand fork
 (def ^:dynamic *request-flags* [nil nil]) ;; Fork request flags - true if the request has been received
@@ -357,7 +356,6 @@
       *phil-name* (nth philosophers phil-id)
       *phil-id* phil-id
       *phil-state* nil
-;      *food-left* (:food-amount parameters)
       *left-fork* phil-id
       *right-fork* (wrapped-phil-id (inc phil-id))
       *request-flags* (initial-request-flags-for phil-id)

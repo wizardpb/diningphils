@@ -40,8 +40,8 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7210744" vertical-offset="266" max-vertical-offset="6660">
-              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+            <state vertical-scroll-proportion="-1.6033058" vertical-offset="6146" max-vertical-offset="6630">
+              <caret line="358" column="0" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -441,7 +441,8 @@
     <MESSAGE value="Updated deps" />
     <MESSAGE value="Better state display and debugging.&#10;- Use an agent for atomic printing&#10;- Separate debugging from regular state display" />
     <MESSAGE value="Better state display and debugging.&#10;- Clear screen only if not debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better state display and debugging.&#10;- Clear screen only if not debugging" />
+    <MESSAGE value="Updated main comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated main comment" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -610,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7210744" vertical-offset="266" max-vertical-offset="6660">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        <state vertical-scroll-proportion="-1.6033058" vertical-offset="6146" max-vertical-offset="6630">
+          <caret line="358" column="0" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
           <folding />
         </state>
       </provider>
