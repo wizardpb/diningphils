@@ -48,13 +48,6 @@
 ;;    :max-think-duration 20
 ;;   } )
 
-(defmacro exec-time
-  "Evaluates expr and returns the time it took."
-  [expr]
-  `(let [start# (. System (nanoTime))]
-    (~expr)
-    (/ (double (- (. System (nanoTime)) start#)) 1000000.0)))
-
 ; The names of the dining philosophers. Their position in the vector determines their id
 (def philosophers ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"])
 
