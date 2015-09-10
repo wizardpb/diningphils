@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45435244" vertical-offset="5426" max-vertical-offset="6570">
-              <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.77707005" vertical-offset="5949" max-vertical-offset="6570">
+              <caret line="421" column="42" selection-start-line="421" selection-start-column="42" selection-end-line="421" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -440,7 +439,8 @@
     <MESSAGE value="File re-organization" />
     <MESSAGE value="File re-organization again" />
     <MESSAGE value="Updated deps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated deps" />
+    <MESSAGE value="Better state display and debugging.&#10;- Use an agent for atomic printing&#10;- Separate debugging from regular state display" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better state display and debugging.&#10;- Use an agent for atomic printing&#10;- Separate debugging from regular state display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -609,8 +609,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45435244" vertical-offset="5426" max-vertical-offset="6570">
-          <caret line="376" column="18" selection-start-line="376" selection-start-column="18" selection-end-line="376" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.77707005" vertical-offset="5949" max-vertical-offset="6570">
+          <caret line="421" column="42" selection-start-line="421" selection-start-column="42" selection-end-line="421" selection-end-column="42" />
           <folding />
         </state>
       </provider>

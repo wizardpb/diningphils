@@ -419,7 +419,7 @@
 
 (defn start
   []
-  (clear-screen)
+  (if (empty? debug-phils) (clear-screen))
   (doseq
     [phil-id (range phil-count)]
     (future (run-philosopher phil-id))))
