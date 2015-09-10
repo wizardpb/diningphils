@@ -40,8 +40,8 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77707005" vertical-offset="5949" max-vertical-offset="6570">
-              <caret line="421" column="42" selection-start-line="421" selection-start-column="42" selection-end-line="421" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.7210744" vertical-offset="266" max-vertical-offset="6660">
+              <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -440,7 +440,8 @@
     <MESSAGE value="File re-organization again" />
     <MESSAGE value="Updated deps" />
     <MESSAGE value="Better state display and debugging.&#10;- Use an agent for atomic printing&#10;- Separate debugging from regular state display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Better state display and debugging.&#10;- Use an agent for atomic printing&#10;- Separate debugging from regular state display" />
+    <MESSAGE value="Better state display and debugging.&#10;- Clear screen only if not debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better state display and debugging.&#10;- Clear screen only if not debugging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -609,8 +610,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77707005" vertical-offset="5949" max-vertical-offset="6570">
-          <caret line="421" column="42" selection-start-line="421" selection-start-column="42" selection-end-line="421" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.7210744" vertical-offset="266" max-vertical-offset="6660">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
           <folding />
         </state>
       </provider>

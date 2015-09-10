@@ -15,18 +15,20 @@
 ;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ;; See the License for the specific language governing permissions and
 ;; limitations under the License.
-;; Each philosopher is represented as a thread and a state map. The thread repeatedly takes forks, eats, frees forks and thinks
-;; until all the food is gone. The state map holds the eating state, the forks to the left and right of the philosopher,
-;; and a food amount.
 ;;
 ;; Edsger Dijkstra's famous dining philosophers problem, solved using the using Chandy-Misra algorithm and Closure agents
 ;;
 ;; See the Chandry-Misra paper (C&M) at https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
 ;;
-;; Philosphers are represented as threads that keep their state in a dynamic var,
+;; Philosphers are represented as threads that keep their state in dynamic vars,
 ;; and communicate via core.async chans. Each is a state machine which implements the main C-M guarded command. State
 ;; changes are driven by message reception from ajoining philosophers, and by messages from futures that cause
-;; transitions between hungry and sated.
+;; transitions between hungry and thinking. When a philosopher gets hungry, it requests the forks it doesn't have,
+;; then begins eating when they arrive. After a while, it becomes sated, and goes back to thinking until it becomes
+;; hungry again.
+;;
+;; There is a fixed amount of food, and this goes on until all the food is gone. When a philosopher
+;; goes hungry and there is no food left it rests. The system is done when all philosophers are resting.
 ;;
 ;; The channels are set up as rendezvous (i.e readers block until something is available,
 ;; writers block until readers have read the last item sent) by setting the channel buffer size to 1
@@ -34,6 +36,10 @@
 ;; To run with status display, evaluate:
 ;;
 ;; (start)
+;;
+;; It can be stopped at any time with
+;;
+;; (stop)
 ;;
 
 (ns diningphils.c-m.core
