@@ -29,79 +29,131 @@
 ;; (start)
 ;;
 
-(ns diningphils.res-hi.core)
+(ns diningphils.res-hi.core
+  (:require [diningphils.utils :refer :all]))
+
+;(set-debug (range (count phil-refs)))
+(set-debug #{})
+;(set-debug #{1})
 
 (def parameters
   {
    :food-amount 10
    :retry-interval 5
-   :max-eat-duration 2000
-   :max-think-duration 2000
+   :eat-range [10000 2000]
+   :think-range [10000 2000]
   } )
+
+(def philosophers
+  "Our philosopher names"
+  ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"])
 
 ;; This set of params causes extreme contention on the forks
 ;; (def parameters
 ;;   {
 ;;    :food-amount 10
 ;;    :retry-interval 5
-;;    :max-eat-duration 2000
-;;    :max-think-duration 20
+;;    :eat-range [1000 200]
+;;    :think-range [1000 200]
 ;;   } )
 
-; The names of the dining philosophers. Their position in the vector determines their id
-(def philosophers ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"])
+;; A communal food bowl
+(def food-bowl
+  (atom (:food-amount parameters)))
 
-; Forks are a vector of refs, one for each philosopher.
+(defn get-food
+  "Get some food from the food bowl"
+  []
+  (swap! food-bowl dec))
+
+(defn food-left? []
+  " Is there any food left ?"
+  (not (zero? @food-bowl)))
+
+;; Forks are a vector of refs, one for each philosopher.
 (def forks (vec (map ref (repeat (count philosophers) nil))))
-
-; Basic primitives to pick up and put down forms
-; Both return true
-
-; pick-up should always pick up an free fork, and allocate it to the indicated philosopher
-(defn pick-up [fork phil]
-  (assert (nil? @fork))
-  ;(println "pick-up " fork)
-  (ref-set fork (:id @phil))
-  true)
-
-; put-down should always free a fork for the correct philosopher
-(defn put-down [fork phil]
-  (assert (= @fork (:id @phil)))
-  ;(println "put-down " fork)
-  (ref-set fork nil))
-
-; Take a fork. If the fork isn't avalable, wait and retry until it is.
-; When this function returns, the taking philosophers has the given fork: (= @fork (:id @phil))
-(defn take-fork [fork phil]
-  ;(println "take " fork)
-  (while
-    (not (dosync (if (nil? @fork) (pick-up fork phil))))
-    (Thread/sleep (:retry-interval parameters))))
-
-(defn drop-fork [fork phil]
-  (dosync (put-down fork phil)))
 
 ; Forks-for returns a vector of two forks for a given philosopher. It arranges that the first fork is
 ; always the lowest numbers fork. When dining, a philosopher always takes the first (lowest) fork first, thus
 ; implementing the condition that ensures a deadlock-free solution
 (defn forks-for [phil-id]
-  (let [fork-size (count forks)]
-  (vec (map #(nth forks %) (sort [(mod phil-id fork-size) (mod (inc phil-id) fork-size)])))))
+  (let [fork-size (count forks)
+        fork-ids (sort [(mod phil-id fork-size) (mod (inc phil-id) fork-size)])]
+    (debug-pr "" phil-id "gets forks " fork-ids)
+    (vec (map #(nth forks %) fork-ids))))
 
-; Make a philosopher state from a name and its id
-(defn make-philosopher [name phil-id]
-  (ref {:name name :id phil-id :forks (forks-for phil-id) :state nil :food (:food-amount parameters)}))
+(defn fork-id
+  " Return the id (index) of  fork (ref)"
+  [fork]
+  (count (take-while #(not (identical? % fork)) forks)))
 
-; The vector of philosopher states - saved back into 'philosophers'
-(def philosophers
-  (doall (map #(make-philosopher %1 %2)
-              philosophers
-              (range (count philosophers)))))
+; The vector of philosopher states - each is a ref holding the satet. Saved back into 'philosophers'
+(def phil-refs
+  (doall
+    (map #(ref {:name %1 :id %2 :forks (forks-for %2) :state nil})
+      philosophers
+      (range (count philosophers)))))
+
+;; Debug utility
+(defn debug-phil
+  [phil & args]
+  (apply debug-pr (:name @phil) (:id @phil) "state=" (:state @phil) ", food=" @food-bowl " " args))
+
+;; State printing
+(defn state-string
+  [phil]
+  (let [
+         p @phil]
+    (str (:name p)
+      ": forks: " (vec (map fork-id (filter #(= (deref %) (:id p)) (:forks p))))
+      ", " (:state p))))
+
+(defn show-state [phil]
+  (if
+    (not (debugging?))
+    (do
+      (log (line-escape 0) "Food left: " @food-bowl)
+      (log (line-escape (+ 3 (:id @phil))) (state-string phil))
+      (log (line-escape 11 8)))))
+
+;; Basic primitives to pick up and put down forms - must be called inside a transaction
+;; pick-up should always pick up a free fork, and allocate it to the indicated philosopher
+(defn has-fork?
+  "Is a philosopher using a fork ?"
+  [phil fork]
+  (= @fork (:id @phil)))
+
+(defn pick-up [fork phil]
+  (assert (nil? @fork))
+  (ref-set fork (:id @phil))
+  true)
+
+; put-down should always free a fork for the correct philosopher
+(defn put-down [fork phil]
+  (assert (has-fork? phil fork))
+  (ref-set fork nil))
+
+; Take a fork. If the fork isn't avalable, wait and retry until it is.
+; When this function returns, the taking philosophers has the given fork: (= @fork (:id @phil))
+(defn take-fork [fork phil]
+  (while
+    (not (dosync (if (nil? @fork) (pick-up fork phil))))
+    (Thread/sleep (:retry-interval parameters)))
+  (show-state phil)
+  (debug-phil phil "Got fork " (fork-id fork))
+  )
+
+(defn drop-fork [fork phil]
+  (dosync (put-down fork phil))
+  (debug-phil phil "Dropped fork " @fork))
 
 ; The philosopher is hungry. Try to grab the forks, when I have them both I'm ready to eat
 ; Grab the forks in the right order - ensures no deadlock
 (defn hungry [phil]
-  (dosync (alter phil assoc :state "hungry"))
+  (debug-phil phil "Going hungry ...")
+  (dosync
+    (alter phil assoc :state "hungry")
+    (show-state phil))
   (doseq [f (:forks @phil)] (take-fork f phil)))
 
 ; Make the philosopher eat. Update our status and sleep. When he's done eating, release both forks in order
@@ -109,41 +161,54 @@
 ; fork synchronization ensures that this is called serially; however, we want a stable view to monitor
 ; status, so we use refs and transactions
 (defn eat [phil]
-  (dosync
-   (assert (every? true? (map = (map deref (:forks @phil)) (repeat 2 (:id @phil))))) ; We should have both forks
-   (alter phil assoc :state "eating"))
-  (do
-    (Thread/sleep (rand-int (:max-eat-duration parameters)))
-    (doseq [f (:forks @phil)] (drop-fork f phil)))
-  )
+  (let
+    [
+      eat-duration (random-from-range (:eat-range parameters))
+      now-eating (dosync
+                   (if (food-left?)
+                     (do
+                       (assert
+                         (every? true? (map = (map deref (:forks @phil)) (repeat 2 (:id @phil))))) ; We should have both forks
+                       (get-food)
+                       (alter phil assoc :state "eating")
+                       (show-state phil)
+                       (debug-phil phil "Eating for " (float (/ eat-duration 1000)) " seconds...")
+                       true)
+                     false))
+      ]
+    (if now-eating
+      (Thread/sleep eat-duration)
+      (debug-phil phil "No food left")))
+  ;; In either case, drop all forks if we have them
+  (doseq [f (:forks @phil)] (if (has-fork? phil f) (drop-fork f phil))))
 
 ; Make the philosopher think. The thread just sleeps
 (defn think [phil]
-  (dosync
-   (alter phil update-in [:food] dec)
-   (alter phil assoc :state "thinkng"))
-  (Thread/sleep (rand-int (:max-think-duration parameters))))
+    (let
+      [think-duration (random-from-range (:think-range parameters))
+       now-thinking (dosync
+                      (if (food-left?)
+                        (do
+                          (alter phil assoc :state "thinkng")
+                          (show-state phil)
+                          (debug-phil phil "Thinking for " (float (/ think-duration 1000)) " seconds...")
+                          true)
+                        false))]
+      (if now-thinking (Thread/sleep think-duration))))
 
 ; Thread behavior for each philosopher - while there is food he gets hungry, eats then thinks.
 ; He starts out hungry
 (defn run-philosopher [phil]
-  (while (not (zero? (:food @phil)))
+  (Thread/sleep 100)
+  (while (food-left?)
     (do
       (hungry phil)
       (eat phil)
-      (think phil))))
-
-; Print a status line for each philosopher
-(defn status []
-  (print"\033[2J\033[0;0H")
-  (dosync
-    (doseq [p-ref philosophers]
-	  (let [p @p-ref
-          pfn #(if (nil? %) "free" % )]
-      	(println (str (:name p)
-                  ": forks: [" (pfn @(first (:forks p))) "," (pfn @(last (:forks p)))
-                  "], " (:state p)
-                  ", food: " (:food p)))))))
+      (think phil)))
+  (dosync (alter phil assoc :state "stopped"))
+  (debug-phil phil "Done")
+  (show-state phil)
+  )
 
 ;; (defn start-system []
 ;;   (doseq [phil philosophers]
@@ -154,51 +219,18 @@
 ;;    (doseq [phil philosophers]
 ;;      (assoc philosophers (:id phil) (assoc phil :eating? false :food 0)))))
 
-(defn start-system []
-  (doseq [phil philosophers]
-    (.start (Thread. #(run-philosopher phil)))))
-
-(defn stop-system []
-  (dosync
-   (doseq [phil philosophers]
-     (alter phil assoc :eating? false)
-     (alter phil assoc :food 0))))
-
-(defn done-eating? [phil]
-  (let [philMap (deref phil)] (and (not (:eating? philMap)) (zero? (:food philMap)))))
-
-(defn all-done-eating? []
-  (dosync
-   (every? true? (map done-eating? philosophers))))
-
-(def run (atom false))
+(defn start []
+  (clear-screen)
+  (doseq [phil phil-refs]
+    (future
+      (debug-phil phil "Starting ...")
+      (run-philosopher phil)))
+  (print (line-escape 10)))
 
 (defn stop []
-  (if @run
-    (do
-      (swap! run not)
-      (stop-system)
-      (println "System stoppped"))
-    (println "System not running"))
+  (swap! food-bowl (fn [_] 0))
   true)
 
-(defn status-loop []
-  (while @run
-    (do
-      (status)
-      (if (all-done-eating?)
-        (stop)
-        (Thread/sleep 1000)))))
-
-(defn start []
-  (if (not @run)
-    (do
-      (swap! run not)
-      (start-system)
-      (.start (Thread. #(status-loop))))
-    (println "System already running"))
-  true)
-
-;; (start)
-;; (stop)
+;(start)
+;(stop)
 
