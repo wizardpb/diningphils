@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/utils.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/utils.clj" afterPath="$PROJECT_DIR$/src/diningphils/utils.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
@@ -38,21 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="core.clj" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.359841" vertical-offset="1041" max-vertical-offset="3630">
-              <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2885" max-vertical-offset="3630">
+              <caret line="219" column="41" selection-start-line="219" selection-start-column="41" selection-end-line="219" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.clj" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="utils.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1155">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+            <state vertical-scroll-proportion="1.3021868" vertical-offset="320" max-vertical-offset="1065">
+              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,8 +82,8 @@
         <option value="$PROJECT_DIR$/lib/deps.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/res_hi/lau.clj" />
-        <option value="$PROJECT_DIR$/src/diningphils/utils.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/utils.clj" />
       </list>
     </option>
   </component>
@@ -474,7 +473,8 @@
     <MESSAGE value="Better state display and debugging.&#10;- Clear screen only if not debugging" />
     <MESSAGE value="Updated main comment" />
     <MESSAGE value="Minor clean-up - commented-out lines removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor clean-up - commented-out lines removed" />
+    <MESSAGE value="Further refinements:&#10;- Single food bowl&#10;- Better monitoring&#10;- Use of util functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Further refinements:&#10;- Single food bowl&#10;- Better monitoring&#10;- Use of util functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -625,18 +625,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="426" max-vertical-offset="1155">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2885" max-vertical-offset="3630">
+          <caret line="219" column="41" selection-start-line="219" selection-start-column="41" selection-end-line="219" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.359841" vertical-offset="1041" max-vertical-offset="3630">
-          <caret line="115" column="47" selection-start-line="115" selection-start-column="47" selection-end-line="115" selection-end-column="47" />
+        <state vertical-scroll-proportion="1.3021868" vertical-offset="320" max-vertical-offset="1065">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>

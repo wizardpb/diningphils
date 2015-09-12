@@ -46,15 +46,11 @@
   (not (empty? @debug-phils)))
 
 (defn line-escape
-  [& args]
-  (let [ [row col] (condp = (count args)
-                     0 [1 1]
-                     1 [(first args) 0]
-                     2 [(first args) (second args)]
-                     )]
-    (str "\033[" row ";" col "H\033[K")))
+  ([] (line-escape 1 1))
+  ([ row ] (line-escape row 1))
+  ([ row col ] (str "\033[" row ";" col "H\033[K")))
 
-(defn clear-screen [] (print "\033[2J\033[1;1H"))
+(defn clear-screen [] (print "\033[2J"))
 
 (defn debug-pr
   "Send a status string down the status channel, but only if we are on a philosopher thread whose *phil-id* is in
@@ -67,5 +63,3 @@
   "Return a random integer from the range-vec [max min]"
   [range-vec]
   (+ (second range-vec) (rand-int (apply - range-vec))))
-
-
