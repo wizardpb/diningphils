@@ -43,7 +43,10 @@
 ;;
 
 (ns diningphils.c-m.core
-  (:require [clojure.core.async :as async] [clojure.string :as str]))
+  (:require
+    [diningphils.utils :refer :all]
+    [clojure.core.async :as async]
+    [clojure.string :as str]))
 
 (def parameters
   {
@@ -76,34 +79,6 @@
   "A vector of channels on which to receive control commands - one for each philosopher thread"
   (vec (map (fn [i] (async/chan 1)) (range phil-count))))
 
-;; Status printing
-(def logger
-  "An agent that logs status messages. Using an agent allows printing to be atomic"
-  (agent 0))
-
-(defn log
-  "Atomically println args to *out* along with a newline"
-  [& args]
-  (send-off logger
-    (fn [_]
-      (println (apply str args))
-      (flush)
-      _)))
-
-(def debug-phils
-  "The phil-ids to include in pr-status tracing. Initial there is no debugging"
-;  #{}
-  (set (range phil-count)))
-
-(defn line-escape [line] (str "\033[" line ";0H\033[K"))
-
-(defn debug-pr
-  "Send a status string down the status channel, but only if we are on a philosopher thread whose *phil-id* is in
-  pr-phils"
-  [& args]
-  (if (contains? debug-phils *phil-id*)
-    (log *phil-name* "(" *phil-id* ") debug: " (apply str args))))
-
 (defn send-command
   "Send a command to philosopher phil-id"
   [phil-id cmd]
@@ -135,11 +110,6 @@
   (future
     (Thread/sleep delayMs)
     (async/>!! chan value)))
-
-(defn random-from-range
-  "Return a random integer from the range-vec [max min]"
-  [range-vec]
-  (+ (second range-vec) (rand-int (apply - range-vec))))
 
 (defn new-ch-record [to-left from-left to-right from-right]
   {:to-left to-left :from-left from-left :to-right to-right :from-right from-right})
@@ -286,20 +256,20 @@
   (let [
          request-fork? (and (hungry?) (holds-request? fork-id) (not (has-fork? fork-id)))
          send-fork? (and (not (eating?)) (holds-request? fork-id) (dirty? fork-id))]
-    (debug-pr "check state, fork-id=" fork-id " request-fork?=" request-fork? " send-fork?=" send-fork?)
+    (debug-pr *phil-name* *phil-id* "check state, fork-id=" fork-id " request-fork?=" request-fork? " send-fork?=" send-fork?)
     (cond
       ;; I'm stopping
       (not *run-flag*) nil
       ;; I'm hungry, don't have a fork and can request one
       request-fork?
       (do
-        (debug-pr "requests fork " fork-id)
+        (debug-pr *phil-name* *phil-id* "requests fork " fork-id)
         (set-fork-request fork-id false)
         (async/>!! (chan-for-fork fork-id) {:cmd :request-fork :fork fork-id}))
       ;; I'm not eating and someone wants a dirty fork
       send-fork?
       (do
-        (debug-pr "sends fork " fork-id)
+        (debug-pr *phil-name* *phil-id* "sends fork " fork-id)
         (assert (has-fork? fork-id))
         (set-fork-dirty fork-id false)
         (set-fork-owner fork-id nil)
@@ -312,17 +282,17 @@
   []
   (if (some true? [(state-changed-fork-id *left-fork*) (state-changed-fork-id *right-fork*)])
     (do
-      (debug-pr "state change: " (internal-state))
+      (debug-pr *phil-name* *phil-id* "state change: " (internal-state))
       (state-changed))))
 
 (defn set-next-state
   "Wait for and set the next state. This is determiend by a message from a neighbor or the state change channel"
   []
-  (debug-pr "wait for message...")
+  (debug-pr *phil-name* *phil-id* "wait for message...")
   (let
     [
       [{cmd :cmd fork-id :fork} port] (async/alts!! (conj *receive-chans* *state-chan* *cmd-chan*))]
-    (debug-pr "new cmd: cmd=" cmd ", fork=" fork-id)
+    (debug-pr *phil-name* *phil-id* "new cmd: cmd=" cmd ", fork=" fork-id)
     (condp = cmd
       ;; Someones requested a fork from me.
       :request-fork (set-fork-request fork-id true)
@@ -339,12 +309,12 @@
       ;; I'm done eating, and have plenty of energy to resume thinking - but only if there is food left.
       :sated (if (food-left?) (think) (done))
       ;; Send my current state
-      :dump-state (debug-pr (internal-state))
+      :dump-state (debug-pr *phil-name* *phil-id* (internal-state))
       ;; Stop myself
       :stop (set! *run-flag* false)
       (assert false))
       (let [fork-msg (if (nil? fork-id) "" (str ", fork=" fork-id))]
-        (debug-pr "message executed: cmd=" cmd fork-msg ", new state=" (internal-state)))
+        (debug-pr *phil-name* *phil-id* "message executed: cmd=" cmd fork-msg ", new state=" (internal-state)))
     ))
 
 ;; Per-thread bindings for a philosopher
@@ -390,7 +360,7 @@
   "Show my running state."
   []
   ;; Only show if we are not debugging
-  (if (empty? debug-phils)
+  (if (not (debugging?))
     (do
       (log (str (line-escape 1) "Food left: " @food-bowl))
       (log
@@ -418,12 +388,9 @@
         (catch Throwable ex
           (println "Exception in " (nth philosophers *phil-id* ": " ex)))))))
 
-(defn clear-screen []
-  (log "\033[2J"))
-
 (defn start
   []
-  (if (empty? debug-phils) (clear-screen))
+  (if (not (debugging?)) (clear-screen))
   (doseq
     [phil-id (range phil-count)]
     (future (run-philosopher phil-id))))
@@ -434,4 +401,4 @@
 (defn stop []
   (for [phil-id (range phil-count)] (stop-phil phil-id)))
 
-(def debug-phils #{})
+;(set-debug [])
