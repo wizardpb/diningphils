@@ -16,7 +16,8 @@
 ;; See the License for the specific language governing permissions and
 ;; limitations under the License.
 ;;
-;; Edsger Dijkstra's famous dining philosophers problem, solved using the using Chandy-Misra algorithm and Closure agents
+;; Edsger Dijkstra's famous dining philosophers problem, solved using the using Chandy-Misra algorithm and Clojure
+;; agents
 ;;
 ;; See the Chandry-Misra paper (C&M) at https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
 ;;
