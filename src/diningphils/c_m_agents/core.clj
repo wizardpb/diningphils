@@ -39,6 +39,11 @@
 ;; 'execute-message' also takes care of calling the main state machine function (state-changed). This implements
 ;; the C-M guarded command as described above.
 ;;
+;; The forks themselves are represented explicitly by a vector of atoms holding the state of each fork. This
+;; indicates whether it is dirty or not. It also includes who is currently using it, which is solely for monitoring
+;; purposes. Note that we do not need transactional semantics on the fork state update, because the message sequencing
+;; of the C-M algorith ensures that only one philosopher will ever try to update the state at any time.
+;;
 ;; There is a fixed amount of food, and this goes on until all the food is gone. When a philosopher
 ;; goes hungry and there is no food left it rests. The system is done when all philosophers are resting.
 ;;
