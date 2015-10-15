@@ -29,11 +29,7 @@
 (defn log
   "Atomically println args to *out* along with a newline"
   [& args]
-  (send-off logger
-    (fn [_]
-      (println (apply str args))
-      (flush)
-      _)))
+  (apply send-off logger (fn [_ & arghs] (println (apply str arghs)) (flush) _) args))
 
 (def debug-phils
   "The phil-ids to include in pr-status tracing. Initial there is no debugging"
@@ -53,10 +49,12 @@
 (defn clear-screen [] (print "\033[2J"))
 
 (defn debug-pr
-  "Send a status string down the status channel, but only if we are on a philosopher thread whose *phil-id* is in
-  pr-phils"
+  "Send a status string down the status channel, but only if phil-id is in debug-phils or phil-id is nil and we haev
+  debug ids set"
   [phil-name phil-id & args]
-  (if (contains? @debug-phils phil-id)
+  (if (or
+        (and (not (empty? @debug-phils)) (nil? phil-id))
+        (contains? @debug-phils phil-id))
     (log phil-name "(" phil-id ") debug: " (apply str args))))
 
 (defn random-from-range
