@@ -38,17 +38,25 @@
 ;; (stop)
 ;;
 
-(ns diningphils.c-m.core
+(ns diningphils.c-m-agents.core
   (:require
     [diningphils.utils :refer :all]
     [clojure.string :as str]))
 
 (def parameters
   {
-   :food-amount 20              ;; The amount of food - the total number of eating sessions
-   :eat-range [10000 5000]      ;; Max and min for eating durations
-   :think-range [10000 5000]    ;; Max and min for thinking durations
-  } )
+    :food-amount 20              ;; The amount of food - the total number of eating sessions
+    :eat-range [10000 5000]      ;; Max and min for eating durations
+    :think-range [10000 5000]    ;; Max and min for thinking durations
+    } )
+
+;; This set of parameters makes things go much faster :-)
+;(def parameters
+;  {
+;   :food-amount 20              ;; The amount of food - the total number of eating sessions
+;   :eat-range [1000 500]      ;; Max and min for eating durations
+;   :think-range [1000 500]    ;; Max and min for thinking durations
+;  } )
 
 ;; The names of the dining philosophers. Their position in the vector determines their id
 (def philosophers ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"])
@@ -281,6 +289,26 @@
         (send-message neighbor recv-fork fork-id)))
     (and (not (done?)) (or request-fork? send-fork?))))
 
+(defn forks-held
+  []
+  (str/join " and "
+    (filter #(boolean %)
+      (map (fn [fork-id]
+             (if (has-fork? fork-id)
+               (str "fork(" fork-id "," (if (dirty? fork-id) "dirty)" "clean)"))
+               nil)
+             ) [*left-fork-id* *right-fork-id*]))))
+
+(defn forks-requested
+  []
+  (str/join " and "
+    (filter #(boolean %)
+      (map (fn [fork-id]
+             (if (holds-request? fork-id)
+               (str "fork(" fork-id ")")
+               nil)
+             ) [*left-fork-id* *right-fork-id*]))))
+
 (defn show-state
   "Show my running state."
   []
@@ -310,29 +338,9 @@
           (now-eating?)
           ]
         ]
-  (if (some true? state-changed-vec)
-    (state-changed *state*)   ;; Continue while the state has changed
-    *state*)))                ;; Otherwise return the new state
-
-(defn forks-held
-  []
-  (str/join " and "
-    (filter #(boolean %)
-      (map (fn [fork-id]
-             (if (has-fork? fork-id)
-               (str "fork(" fork-id "," (if (dirty? fork-id) "dirty)" "clean)"))
-               nil)
-             ) [*left-fork-id* *right-fork-id*]))))
-
-(defn forks-requested
-  []
-  (str/join " and "
-    (filter #(boolean %)
-      (map (fn [fork-id]
-             (if (holds-request? fork-id)
-               (str "fork(" fork-id ")")
-               nil)
-             ) [*left-fork-id* *right-fork-id*]))))
+    (if (some true? state-changed-vec)
+      (state-changed *state*)   ;; Continue while the state has changed
+      *state*)))                ;; Otherwise return the new state
 
 (defn dump-state
   []
@@ -358,9 +366,8 @@
 (defn start
   "Start up each agent. Initialize the food bowl and tell philosophers to start"
   []
-  (log "Start?")
-;  (if (not (debugging?)) (clear-screen))
-;  (swap! food-bowl (fn [_] (:food-amount parameters)))
+  (if (not (debugging?)) (clear-screen))
+  (swap! food-bowl (fn [_] (:food-amount parameters)))
   (map (fn [phil-id]
          (start-philosopher phil-id)
          phil-id) (range phil-count)))

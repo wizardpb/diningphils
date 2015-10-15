@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43d95222-363c-4adf-99ae-fa0b6ac4737a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/utils.clj" afterPath="$PROJECT_DIR$/src/diningphils/utils.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="diningphils.iws" />
@@ -31,8 +30,8 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4509804" vertical-offset="4315" max-vertical-offset="5670">
-              <caret line="303" column="14" selection-start-line="303" selection-start-column="14" selection-end-line="303" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.44117647" vertical-offset="570" max-vertical-offset="5775">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="1" selection-end-line="58" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -485,7 +484,8 @@
     <MESSAGE value="Further refinements:&#10;- Single food bowl&#10;- Better monitoring&#10;- Use of util functions" />
     <MESSAGE value="Better version of line-escape" />
     <MESSAGE value="Refactored C-M solution to use utils" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored C-M solution to use utils" />
+    <MESSAGE value="Added C-M solution built using agents and not core.async" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added C-M solution built using agents and not core.async" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -760,8 +760,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4509804" vertical-offset="4315" max-vertical-offset="5670">
-          <caret line="303" column="14" selection-start-line="303" selection-start-column="14" selection-end-line="303" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.44117647" vertical-offset="570" max-vertical-offset="5775">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="1" selection-end-line="58" selection-end-column="6" />
           <folding />
         </state>
       </provider>
