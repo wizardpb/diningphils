@@ -30,8 +30,8 @@
       <file leaf-file-name="core.clj" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6034483" vertical-offset="0" max-vertical-offset="6045">
-              <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+            <state vertical-scroll-proportion="8.904215" vertical-offset="482" max-vertical-offset="6120">
+              <caret line="342" column="55" selection-start-line="342" selection-start-column="55" selection-end-line="342" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -433,7 +433,7 @@
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23057325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23057325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32866243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -490,7 +490,8 @@
     <MESSAGE value="Finally spelt 'Clojure' right :-)" />
     <MESSAGE value="Mo' better comment" />
     <MESSAGE value="Mo' better comment (2)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mo' better comment (2)" />
+    <MESSAGE value="Mo' better comment - again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mo' better comment - again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -765,8 +766,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6034483" vertical-offset="0" max-vertical-offset="6045">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+        <state vertical-scroll-proportion="8.904215" vertical-offset="482" max-vertical-offset="6120">
+          <caret line="342" column="55" selection-start-line="342" selection-start-column="55" selection-end-line="342" selection-end-column="55" />
           <folding />
         </state>
       </provider>

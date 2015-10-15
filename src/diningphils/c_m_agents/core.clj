@@ -81,6 +81,7 @@
 (def phil-count (count philosophers))
 (def max-phil-id (dec phil-count))
 (def food-bowl (atom (:food-amount parameters)))
+(def max-name-size (apply max (map count philosophers)))
 
 (declare phil-agents)
 
@@ -265,16 +266,20 @@
 
 ;; Philosopher behaviors
 (defn request-fork
+  "Receive a fork request from a neighbor. Set the new state and return it."
   [fork-id]
   (set-fork-request *state* fork-id true))
 
 (defn recv-fork
+  "Receive a requested fork from a neighbor. Set the new fork state and return the current agent state."
   [fork-id]
   (assert (not (dirty? fork-id)))
   (set-fork-owner fork-id *phil-id*)
   *state*)
 
 (defn now-eating?
+  "Check if we are now able to eat i.e. we are hungry and now have both forks. If so,
+  set the new state. Return true if we have changed state to show we are now eating."
   []
   (let [start-eating? (and (hungry?) (has-fork? *left-fork-id*) (has-fork? *right-fork-id*))]
     (debug-pr *phil-name* *phil-id* "check state: start-eating?=" start-eating?)
@@ -332,10 +337,10 @@
   []
   ;; Only show if we are not debugging
   (if (not (debugging?))
-    (do
+    (let [name-padding (apply str (repeat (- max-name-size (count *phil-name*)) " "))]
       (log (str (line-escape 1) "Food left: " @food-bowl))
       (log
-        (line-escape (+ 3 *phil-id*)) *phil-name* "(" *phil-id* "): "
+        (line-escape (+ 3 *phil-id*)) name-padding " " *phil-name* "(" *phil-id* "): "
         (str/capitalize (str/join (rest (str (:phil-state *state*)))))
         ", holds " (let [s (forks-held)] (if (empty? s) "no forks" s))
         (let [s (forks-requested)] (if (empty? s) "" (str ", has requests for " s)))
@@ -343,8 +348,8 @@
       (log (line-escape 8)))))
 
 (defn state-changed
-  "The state has changed because of some event (usually a message reception) - examine and act on the change for each
-   fork"
+  "The state has changed because of some event (usually a message reception) - examine and act on the change - once for
+  each fork change and also if we have started eating. This is called recursively until no state change occurs."
   [new-state]
   (set! *state* new-state)
   (show-state)
@@ -360,18 +365,18 @@
       (state-changed *state*)   ;; Continue while the state has changed
       *state*)))                ;; Otherwise return the new state
 
+;; Debiug helper
 (defn dump-state
   []
   (log (internal-state))
   *state*)
 
-(defn error-handler-fn
-  [a exception]
-  (log (:phil-name @a) "(" (:phil-id @a) ") throws exception" exception ))
-
 (def phil-agents
   (map
-    #(agent (initial-agent-state %) :error-handler error-handler-fn :error-mode :fail)
+    #(agent
+       (initial-agent-state %)
+       :error-handler (fn [a exception] (log (:phil-name @a) "(" (:phil-id @a) ") throws exception" exception ))
+       :error-mode :fail)
     (range phil-count)))
 
 (defn start-philosopher
