@@ -26,6 +26,16 @@
 ;; from ajoining philosophers. When a philosopher gets hungry, it requests the forks it doesn't have, then begins
 ;; eating when they arrive. After a while, it becomes sated, and goes back to thinking until it becomes hungry again.
 ;;
+;; Messages between philosophers (agents) are implemented as agent sends (and sent using send-off because of state
+;; monitoring). To save having to pass a new state map around between various functions that access and manipulate it
+;; during message execution, message sends are wrapped by a function (execute-message) that places the current state
+;; into thread-local vars. This includes the var *state*, which holds the new state to be set on message completion.
+;; Any function that updates the state places the new state map into this var, which is finally returned as the new
+;; state for the agent.
+;;
+;; 'execute-message' also takes care of calling the main state machine function (state-changed). This implements
+;; the C-M guarded command as described above.
+;;
 ;; There is a fixed amount of food, and this goes on until all the food is gone. When a philosopher
 ;; goes hungry and there is no food left it rests. The system is done when all philosophers are resting.
 ;;
