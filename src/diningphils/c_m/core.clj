@@ -167,6 +167,17 @@
   (swap! (nth-fork fork-id) assoc :owner phil-id))
 
 ;; Initialization
+(defn initialize-forks []
+  (alter-var-root #'forks
+    (fn [_] (vec (map
+            #(atom
+               (if (zero? %)
+                 ;; All forks are dirty
+                 ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
+                 ;; otherwise the fork is owned by the same phil-id
+                 {:owner max-phil-id :dirty? true}
+                 {:owner % :dirty? true})) (range phil-count))))))
+
 (defn initial-request-flags-for
   [phil-id]
   ;; Request flags are initialized so the flag for fork(n) is held by the philosopher who doesn't initially hold fork(n)
@@ -386,11 +397,13 @@
             (state-changed)))
         (show-state)
         (catch Throwable ex
-          (println "Exception in " (nth philosophers *phil-id* ": " ex)))))))
+          (println "Exception in " (nth philosophers *phil-id*) ": " ex))))))
 
 (defn start
   []
   (if (not (debugging?)) (clear-screen))
+  (swap! food-bowl (fn [_] (:food-amount parameters)))
+  (initialize-forks)
   (doseq
     [phil-id (range phil-count)]
     (future (run-philosopher phil-id))))
