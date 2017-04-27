@@ -55,6 +55,14 @@
    :think-range [10000 5000]    ;; Max and min for thinking durations
   } )
 
+;; These params cause extreme contention on forks - lots of messages
+#_(def parameters
+  {
+   :food-amount 20              ;; The amount of food - the total number of eating sessions
+   :eat-range [1000 500]      ;; Max and min for eating durations
+   :think-range [1000 500]    ;; Max and min for thinking durations
+   } )
+
 ;; The names of the dining philosophers. Their position in the vector determines their id
 (def philosophers ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"])
 (def phil-count (count philosophers))
