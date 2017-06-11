@@ -1,44 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f934fb6-f015-42cf-bada-b20987d09460" name="Default" comment="Updated to Clojure 1.8.0&#10;Added re-initialization so that demo can be restarted after stop">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clojure_complete_0_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_clojure_1_8_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_async_0_3_442.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_cache_0_6_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_core_memoize_0_5_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_data_priority_map_0_0_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_analyzer_0_6_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_analyzer_jvm_0_7_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_nrepl_0_2_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_reader_1_0_0_beta4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_ow2_asm_asm_all_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__clojure_complete_clojure_complete_0_2_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_clojure_1_7_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_core_async_0_1_346_0_17112a_alpha.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_core_cache_0_6_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_core_memoize_0_5_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_data_priority_map_0_0_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_tools_analyzer_0_1_0_beta12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_tools_analyzer_jvm_0_1_0_beta12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_clojure_tools_nrepl_0_2_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_all_4_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pom.xml" afterPath="" />
+    <list default="true" id="0f934fb6-f015-42cf-bada-b20987d09460" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/waiter/core.clj" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/diningphils/diningphils/pom.properties" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diningphils.iml" afterPath="$PROJECT_DIR$/diningphils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/diningphils/diningphils/pom.properties" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/diningphils/diningphils/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/utils.clj" afterPath="$PROJECT_DIR$/src/diningphils/utils.clj" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +24,18 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="157" column="19" lean-forward="false" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+            <state relative-caret-position="276">
+              <caret line="194" column="10" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2214">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="48" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -67,18 +45,99 @@
         <entry file="file://$PROJECT_DIR$/project.clj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="172" column="18" lean-forward="false" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="2205" column="0" lean-forward="false" selection-start-line="2205" selection-start-column="0" selection-end-line="2205" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="form-init3737873730248953391.clj" pinned="false" current-in-tab="false">
+        <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init3737873730248953391.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="399" column="62" lean-forward="false" selection-start-line="399" selection-start-column="62" selection-end-line="399" selection-end-column="62" />
-              <folding />
+            <state relative-caret-position="-2603">
+              <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+              <folding>
+                <marker date="1497137227000" expanded="true" signature="2715:2765" ph="(def parameters ...)" />
+                <marker date="1497137227000" expanded="true" signature="4061:4232" ph="(def cmd-channels ...)" />
+                <marker date="1497137227000" expanded="true" signature="4234:4363" ph="(defn send-command ...)" />
+                <marker date="1497137227000" expanded="true" signature="4365:4514" ph="(defn dump-state-for ...)" />
+                <marker date="1497137227000" expanded="true" signature="4516:4591" ph="(defn dump-state ...)" />
+                <marker date="1497137227000" expanded="true" signature="4610:4691" ph="(defn get-food ...)" />
+                <marker date="1497137227000" expanded="true" signature="4693:4740" ph="(defn food-left? ...)" />
+                <marker date="1497137227000" expanded="true" signature="4742:4801" ph="(defn wrapped-phil-id ...)" />
+                <marker date="1497137227000" expanded="true" signature="4803:4965" ph="(defn delay-send-on ...)" />
+                <marker date="1497137227000" expanded="true" signature="4967:5111" ph="(defn new-ch-record ...)" />
+                <marker date="1497137227000" expanded="true" signature="5113:6354" ph="(defn build-channels ...)" />
+                <marker date="1497137227000" expanded="true" signature="6356:6554" ph="(def channels ...)" />
+                <marker date="1497137227000" expanded="true" signature="6556:7000" ph="(def forks ...)" />
+                <marker date="1497137227000" expanded="true" signature="7002:7109" ph="(defn nth-fork ...)" />
+                <marker date="1497137227000" expanded="true" signature="7111:7245" ph="(defn set-fork-dirty ...)" />
+                <marker date="1497137227000" expanded="true" signature="7247:7366" ph="(defn set-fork-owner ...)" />
+                <marker date="1497137227000" expanded="true" signature="7386:7827" ph="(defn initialize-forks ...)" />
+                <marker date="1497137227000" expanded="true" signature="7829:8270" ph="(defn initial-request-flags-for ...)" />
+                <marker date="1497137227000" expanded="true" signature="8456:8705" ph="(defn local-fork-index ...)" />
+                <marker date="1497137227000" expanded="true" signature="8707:8854" ph="(defn chan-for-fork ...)" />
+                <marker date="1497137227000" expanded="true" signature="8856:9002" ph="(defn holds-request? ...)" />
+                <marker date="1497137227000" expanded="true" signature="9037:9149" ph="(defn has-fork? ...)" />
+                <marker date="1497137227000" expanded="true" signature="9151:9301" ph="(defn dirty? ...)" />
+                <marker date="1497137227000" expanded="true" signature="9320:9496" ph="(defn set-fork-request ...)" />
+                <marker date="1497137227000" expanded="true" signature="9498:9720" ph="(defn think ...)" />
+                <marker date="1497137227000" expanded="true" signature="9722:9892" ph="(defn done ...)" />
+                <marker date="1497137227000" expanded="true" signature="9894:10187" ph="(defn eat ...)" />
+                <marker date="1497137227000" expanded="true" signature="10189:10273" ph="(defn hungry ...)" />
+                <marker date="1497137227000" expanded="true" signature="10295:10606" ph="(defn internal-state ...)" />
+                <marker date="1497137227000" expanded="true" signature="10633:11873" ph="(defn state-changed-fork-id ...)" />
+                <marker date="1497137227000" expanded="true" signature="11875:12274" ph="(defn state-changed ...)" />
+                <marker date="1497137227000" expanded="true" signature="12276:13760" ph="(defn set-next-state ...)" />
+                <marker date="1497137227000" expanded="true" signature="13803:14428" ph="(defn with-bindings-for ...)" />
+                <marker date="1497137227000" expanded="true" signature="14430:14705" ph="(defn forks-held ...)" />
+                <marker date="1497137227000" expanded="true" signature="14707:14952" ph="(defn forks-requested ...)" />
+                <marker date="1497137227000" expanded="true" signature="14954:15473" ph="(defn show-state ...)" />
+                <marker date="1497137227000" expanded="true" signature="15475:15988" ph="(defn run-philosopher ...)" />
+                <marker date="1497137227000" expanded="true" signature="15990:16206" ph="(defn start ...)" />
+                <marker date="1497137227000" expanded="true" signature="16208:16265" ph="(defn stop-phil ...)" />
+                <marker date="1497137227000" expanded="true" signature="16267:16338" ph="(defn stop ...)" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -86,8 +145,8 @@
       <file leaf-file-name="utils.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-328">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="123">
+              <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -96,7 +155,7 @@
       <file leaf-file-name="tests.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
+            <state relative-caret-position="555">
               <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
               <folding />
             </state>
@@ -108,7 +167,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>set-fork-request</find>
+      <find>log</find>
     </findStrings>
+    <replaceStrings>
+      <replace>debug-pr</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -128,8 +191,10 @@
       <list>
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/utils.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/waiter/core.clj" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -162,6 +227,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -220,6 +286,50 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="waiter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diningphils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diningphils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diningphils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res_hi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diningphils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diningphils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="diningphils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="c_m_agents" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -248,9 +358,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,8 +373,26 @@
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="cursive.last.file.extension./Users/paul/IdeaProjects/diningphils/src" value="clj" />
   </component>
-  <component name="ReplState" timestamp="1493302075425">{:repl-history {:ide [], :local [&quot;(repeat 5 {})&quot; &quot;(repeat 5 (atom {}))&quot;], :remote []}}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/diningphils/waiter" />
+    </key>
+  </component>
+  <component name="ReplState" timestamp="1497217887484">{:repl-history {:ide [], :local [{:command &quot;(vec (map #(future (run-phil %1)) (range (count phil-names))))&quot;, :offset 0, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(map #(future (run-phil %1)) (range (count phil-names)))&quot;, :offset 0, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (run-phil 0))&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(dotimes [n (range 5)] (future (run-phil n)))&quot;, :offset 42, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(map (fn [n] (future (run-phil n))) (range (count phil-names)))&quot;, :offset 35, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(map (fn [n] (future-call (partial run-phil n))) (range (count phil-names)))&quot;, :offset 76, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(map (fn [n] (future (run-phil 1))) (range (count phil-names)))&quot;, :offset 63, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(dotimes [n 5] (future (run-phil n)))&quot;, :offset 13, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(repeat 5 {})&quot;, :offset 13} {:command &quot;(repeat 5 (atom {}))&quot;, :offset 20} {:command &quot;(take 2 (cycle [0 1 2 3 4 5]))&quot;, :offset 30} {:command &quot;(take 6 (cycle [0 1 2 3 4 5]))&quot;, :offset 30} {:command &quot;(take 10 (cycle [0 1 2 3 4 5]))&quot;, :offset 31} {:command &quot;(nth (take 10 (cycle [0 1 2 3 4 5])) 5)&quot;, :offset 39} {:command &quot;(nth (take 10 (cycle [0 1 2 3 4 5])) 6)&quot;, :offset 39} {:command &quot;(nth (take 10 (cycle [0 1 2 3 4 5])) 7)&quot;, :offset 39} {:command &quot;(stop)&quot;, :offset 6} {:command &quot;(def c (async/chan))&quot;, :offset 20, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(def c (async/chan 10))&quot;, :offset 21, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/&gt;!! c \&quot;hi\&quot;)&quot;, :offset 18, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/&lt;!! c)&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(defn ping-pong [c msg]\n  (println (async/&lt;!! c))\n  (async/&gt;!! c msg))&quot;, :offset 70, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;((partial range 5))&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(pcalls (partial ping-pong c \&quot;ping\&quot;) (partial ping-pong c \&quot;pong\&quot;))A&quot;, :offset 7, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/&gt;!! c \&quot;ping\&quot;)&quot;, :offset 18, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/alt!!\n  chans ([v c] (println v c)))&quot;, :offset 43, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/alt!!\n  [(first chans) (last chans)] ([v c] (println v c)))&quot;, :offset 41, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/alt!!\n  [(first chans) (last chans)] ([a b] (println a b)))&quot;, :offset 63, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/alts!! chans)&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/&gt;!! (first chans) \&quot;Hey\&quot;)&quot;, :offset 31, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;chans&quot;, :offset 5, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/thread \n  (async/alt!!\n   chans ([v c] (println v c))))&quot;, :offset 62, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/&gt;!! (first chans) \&quot;hey!\&quot;)&quot;, :offset 30, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/thread \n  (async/alt!!\n   chans ([v c] (println v c)))\n  \&quot;Done\&quot;)&quot;, :offset 71, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(def r (async/thread\n   (async/alt!!\n     chans ([v c] (println v c)))\n   \&quot;Done\&quot;))&quot;, :offset 7, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/thread \n  (async/&gt;!! (first chans) \&quot;hey!\&quot;))&quot;, :offset 17, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(async/&lt;!! r)&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/thread (println \&quot;Hey!\&quot;))&quot;, :offset 27, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&lt;!! (a/thread (println \&quot;Hey!\&quot;) \&quot;Done\&quot;))&quot;, :offset 7, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(def r (a/thread (a/alts!! chans)))&quot;, :offset 35, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&lt;!! r)&quot;, :offset 9, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(cons 1 '(2 3))&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! (first chans) '(say \&quot;Hello\&quot;))&quot;, :offset 33, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(print :a)&quot;, :offset 9, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&gt;!! (first chans) \&quot;Hey\&quot;)&quot;, :offset 27, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/thread-call waiter)&quot;, :offset 21, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&lt;!! (first chans))&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/thread (a/alts!! chans))&quot;, :offset 27, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (println (a/alts!! chans)))&quot;, :offset 17, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (a/alt!! chans ([v c] (println v c))))&quot;, :offset 46, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (a/alt!! [(first chans) (last chans)] ([v c] (println v c))))&quot;, :offset 47, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply say (0 \&quot;hi\&quot;))&quot;, :offset 17, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(say 0 \&quot;Hi\&quot;)&quot;, :offset 10, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply say '(0 \&quot;hi\&quot;))&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(dispatch '(say \&quot;hi\&quot;) 0)&quot;, :offset 23, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(first '(say \&quot;Hi\&quot;))\n&quot;, :offset 20, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(rest '(say \&quot;Hi\&quot;))&quot;, :offset 0, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(cons 0 (rest '(say \&quot;Hi\&quot;)))&quot;, :offset 0, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply (first '(say \&quot;Hi\&quot;) (cons 0 (rest '(say \&quot;Hi\&quot;)))))&quot;, :offset 25, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply (first '(say \&quot;Hi\&quot;)) ())&quot;, :offset 29, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply first (cons 0 (rest '(say \&quot;Hi\&quot;)))))&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply first (cons 0 (rest '(say \&quot;Hi\&quot;))))&quot;, :offset 41, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply say (cons 0 (rest '(say \&quot;Hi\&quot;))))&quot;, :offset 10, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply (first '(say \&quot;Hi\&quot;)) (cons 0 (rest '(say \&quot;Hi\&quot;))))&quot;, :offset 22, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply (var (first '(say \&quot;Hi\&quot;))) (cons 0 (rest '(say \&quot;Hi\&quot;))))&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;((first '(say \&quot;Hi\&quot;)) (cons 0 (rest '(say \&quot;Hi\&quot;))))&quot;, :offset 1, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(var-get say)&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(var-get (var say))&quot;, :offset 13, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(apply (var-get (var (first '(say \&quot;Hi\&quot;)))) (cons 0 (rest '(say \&quot;Hi\&quot;))))&quot;, :offset 21, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(eval '(say \&quot;hi\&quot;))&quot;, :offset 15, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(eval '(say 0 \&quot;hi\&quot;))&quot;, :offset 14, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(conj '(say \&quot;Hi\&quot;) 0)&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(concat '(say \&quot;Hi\&quot;) 0)&quot;, :offset 7, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(conj '(say \&quot;Hi\&quot;) [0])&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(conj '(say \&quot;Hi\&quot;) (list 0))&quot;, :offset 25, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(concat '(say \&quot;Hi\&quot;) (list 0))&quot;, :offset 7, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(eval (concat '(say \&quot;Hi\&quot;) (list 0)))&quot;, :offset 6, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&gt;!! (first chan) '(say \&quot;Hi\&quot;))&quot;, :offset 29, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&gt;!! (first chans) '(say \&quot;Hi\&quot;))&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&gt;!! (last chans) '(say \&quot;Hi\&quot;))&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(dotimes [n (count philosophers)] (a/&gt;!! (nth chans n) '(say \&quot;Hi\&quot;)))&quot;, :offset 53, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&gt;!! (last chans) :end)&quot;, :offset 24, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(a/&gt;!! (nth chans 1) '(say \&quot;Hi\&quot;))&quot;, :offset 19, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(show-line 1 \&quot;hey\&quot;)&quot;, :offset 17, :ns &quot;diningphils.utils&quot;} {:command &quot;(forks\n  )&quot;, :offset 2} {:command &quot;forks&quot;, :offset 5, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(run)&quot;, :offset 4, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(map #(partial run-phil %1) (range (count philosophers)))&quot;, :offset 57, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(vec (map #(partial run-phil %1) (range (count philosophers))))&quot;, :offset 5, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (waiter))&quot;, :offset 17, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(run-phil 0)&quot;, :offset 12, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (waiter)) (run-phil 0)&quot;, :offset 30, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (waiter)) (pcalls (vec (map #(partial run-phil %1) (range 2))))&quot;, :offset 67, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(vec (map #(partial run-phil %1) (range 2)))&quot;, :offset 0, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(pcalls (vec (map #(partial run-phil %1) (range 2))))&quot;, :offset 0, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;((first (vec (map #(partial run-phil %1) (range 2)))))&quot;, :offset 1, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(future (waiter)) (apply pcalls (dorun (map #(partial run-phil %1) (range 2))))&quot;, :offset 38, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(let [c (a/chan 1)]\n  (a/&gt;!! c true)\n  (a/&lt;!! c))&quot;, :offset 49, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(start {:food-amount 1})&quot;, :offset 24, :ns &quot;diningphils.waiter.core&quot;} {:command &quot;(start)&quot;, :offset 6, :ns &quot;diningphils.waiter.core&quot;}], :remote []}}</component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager" selected="Clojure REPL.Repl">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module />
@@ -445,6 +572,13 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -496,6 +630,8 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
       <classRegexps />
       <testRegexps />
       <envs />
@@ -512,6 +648,8 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
       <classRegexps />
       <testRegexps />
       <envs />
@@ -562,6 +700,8 @@
       <setting name="testName" value="" />
       <setting name="testKind" value="Class" />
       <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
       <classRegexps />
       <testRegexps />
       <envs />
@@ -599,30 +739,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1436" height="873" extended-state="6" />
-    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.49713057" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="123" width="1236" height="673" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41890165" sideWeight="0.51147777" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41890165" sideWeight="0.48852223" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3908046" sideWeight="0.5200861" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3908046" sideWeight="0.47991392" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.5308465" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.52797705" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25322813" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25681493" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.4913917" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39974457" sideWeight="0.21090387" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.4913917" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -634,40 +774,31 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated to Clojure 1.8.0&#10;Added re-initialization so that demo can be restarted after stop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated to Clojure 1.8.0&#10;Added re-initialization so that demo can be restarted after stop" />
+    <MESSAGE value="Added new set of params for fast execution &amp; contention" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new set of params for fast execution &amp; contention" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="2029" column="6" lean-forward="false" selection-start-line="2029" selection-start-column="6" selection-end-line="2029" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
+        <state relative-caret-position="2355">
           <caret line="157" column="19" lean-forward="false" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -680,26 +811,204 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
+    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-328">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="555">
+          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="399" column="62" lean-forward="false" selection-start-line="399" selection-start-column="62" selection-end-line="399" selection-end-column="62" />
+        <state relative-caret-position="930">
+          <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+          <folding>
+            <marker date="1497137227000" expanded="true" signature="2715:2765" ph="(def parameters ...)" />
+            <marker date="1497137227000" expanded="true" signature="4061:4232" ph="(def cmd-channels ...)" />
+            <marker date="1497137227000" expanded="true" signature="4234:4363" ph="(defn send-command ...)" />
+            <marker date="1497137227000" expanded="true" signature="4365:4514" ph="(defn dump-state-for ...)" />
+            <marker date="1497137227000" expanded="true" signature="4516:4591" ph="(defn dump-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="4610:4691" ph="(defn get-food ...)" />
+            <marker date="1497137227000" expanded="true" signature="4693:4740" ph="(defn food-left? ...)" />
+            <marker date="1497137227000" expanded="true" signature="4742:4801" ph="(defn wrapped-phil-id ...)" />
+            <marker date="1497137227000" expanded="true" signature="4803:4965" ph="(defn delay-send-on ...)" />
+            <marker date="1497137227000" expanded="true" signature="4967:5111" ph="(defn new-ch-record ...)" />
+            <marker date="1497137227000" expanded="true" signature="5113:6354" ph="(defn build-channels ...)" />
+            <marker date="1497137227000" expanded="true" signature="6356:6554" ph="(def channels ...)" />
+            <marker date="1497137227000" expanded="true" signature="6556:7000" ph="(def forks ...)" />
+            <marker date="1497137227000" expanded="true" signature="7002:7109" ph="(defn nth-fork ...)" />
+            <marker date="1497137227000" expanded="true" signature="7111:7245" ph="(defn set-fork-dirty ...)" />
+            <marker date="1497137227000" expanded="true" signature="7247:7366" ph="(defn set-fork-owner ...)" />
+            <marker date="1497137227000" expanded="true" signature="7386:7827" ph="(defn initialize-forks ...)" />
+            <marker date="1497137227000" expanded="true" signature="7829:8270" ph="(defn initial-request-flags-for ...)" />
+            <marker date="1497137227000" expanded="true" signature="8456:8705" ph="(defn local-fork-index ...)" />
+            <marker date="1497137227000" expanded="true" signature="8707:8854" ph="(defn chan-for-fork ...)" />
+            <marker date="1497137227000" expanded="true" signature="8856:9002" ph="(defn holds-request? ...)" />
+            <marker date="1497137227000" expanded="true" signature="9037:9149" ph="(defn has-fork? ...)" />
+            <marker date="1497137227000" expanded="true" signature="9151:9301" ph="(defn dirty? ...)" />
+            <marker date="1497137227000" expanded="true" signature="9320:9496" ph="(defn set-fork-request ...)" />
+            <marker date="1497137227000" expanded="true" signature="9498:9720" ph="(defn think ...)" />
+            <marker date="1497137227000" expanded="true" signature="9722:9892" ph="(defn done ...)" />
+            <marker date="1497137227000" expanded="true" signature="9894:10187" ph="(defn eat ...)" />
+            <marker date="1497137227000" expanded="true" signature="10189:10273" ph="(defn hungry ...)" />
+            <marker date="1497137227000" expanded="true" signature="10295:10606" ph="(defn internal-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="10633:11873" ph="(defn state-changed-fork-id ...)" />
+            <marker date="1497137227000" expanded="true" signature="11875:12274" ph="(defn state-changed ...)" />
+            <marker date="1497137227000" expanded="true" signature="12276:13760" ph="(defn set-next-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="13803:14428" ph="(defn with-bindings-for ...)" />
+            <marker date="1497137227000" expanded="true" signature="14430:14705" ph="(defn forks-held ...)" />
+            <marker date="1497137227000" expanded="true" signature="14707:14952" ph="(defn forks-requested ...)" />
+            <marker date="1497137227000" expanded="true" signature="14954:15473" ph="(defn show-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="15475:15988" ph="(defn run-philosopher ...)" />
+            <marker date="1497137227000" expanded="true" signature="15990:16206" ph="(defn start ...)" />
+            <marker date="1497137227000" expanded="true" signature="16208:16265" ph="(defn stop-phil ...)" />
+            <marker date="1497137227000" expanded="true" signature="16267:16338" ph="(defn stop ...)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2603">
+          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding>
+            <marker date="1497137227000" expanded="true" signature="2715:2765" ph="(def parameters ...)" />
+            <marker date="1497137227000" expanded="true" signature="4061:4232" ph="(def cmd-channels ...)" />
+            <marker date="1497137227000" expanded="true" signature="4234:4363" ph="(defn send-command ...)" />
+            <marker date="1497137227000" expanded="true" signature="4365:4514" ph="(defn dump-state-for ...)" />
+            <marker date="1497137227000" expanded="true" signature="4516:4591" ph="(defn dump-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="4610:4691" ph="(defn get-food ...)" />
+            <marker date="1497137227000" expanded="true" signature="4693:4740" ph="(defn food-left? ...)" />
+            <marker date="1497137227000" expanded="true" signature="4742:4801" ph="(defn wrapped-phil-id ...)" />
+            <marker date="1497137227000" expanded="true" signature="4803:4965" ph="(defn delay-send-on ...)" />
+            <marker date="1497137227000" expanded="true" signature="4967:5111" ph="(defn new-ch-record ...)" />
+            <marker date="1497137227000" expanded="true" signature="5113:6354" ph="(defn build-channels ...)" />
+            <marker date="1497137227000" expanded="true" signature="6356:6554" ph="(def channels ...)" />
+            <marker date="1497137227000" expanded="true" signature="6556:7000" ph="(def forks ...)" />
+            <marker date="1497137227000" expanded="true" signature="7002:7109" ph="(defn nth-fork ...)" />
+            <marker date="1497137227000" expanded="true" signature="7111:7245" ph="(defn set-fork-dirty ...)" />
+            <marker date="1497137227000" expanded="true" signature="7247:7366" ph="(defn set-fork-owner ...)" />
+            <marker date="1497137227000" expanded="true" signature="7386:7827" ph="(defn initialize-forks ...)" />
+            <marker date="1497137227000" expanded="true" signature="7829:8270" ph="(defn initial-request-flags-for ...)" />
+            <marker date="1497137227000" expanded="true" signature="8456:8705" ph="(defn local-fork-index ...)" />
+            <marker date="1497137227000" expanded="true" signature="8707:8854" ph="(defn chan-for-fork ...)" />
+            <marker date="1497137227000" expanded="true" signature="8856:9002" ph="(defn holds-request? ...)" />
+            <marker date="1497137227000" expanded="true" signature="9037:9149" ph="(defn has-fork? ...)" />
+            <marker date="1497137227000" expanded="true" signature="9151:9301" ph="(defn dirty? ...)" />
+            <marker date="1497137227000" expanded="true" signature="9320:9496" ph="(defn set-fork-request ...)" />
+            <marker date="1497137227000" expanded="true" signature="9498:9720" ph="(defn think ...)" />
+            <marker date="1497137227000" expanded="true" signature="9722:9892" ph="(defn done ...)" />
+            <marker date="1497137227000" expanded="true" signature="9894:10187" ph="(defn eat ...)" />
+            <marker date="1497137227000" expanded="true" signature="10189:10273" ph="(defn hungry ...)" />
+            <marker date="1497137227000" expanded="true" signature="10295:10606" ph="(defn internal-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="10633:11873" ph="(defn state-changed-fork-id ...)" />
+            <marker date="1497137227000" expanded="true" signature="11875:12274" ph="(defn state-changed ...)" />
+            <marker date="1497137227000" expanded="true" signature="12276:13760" ph="(defn set-next-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="13803:14428" ph="(defn with-bindings-for ...)" />
+            <marker date="1497137227000" expanded="true" signature="14430:14705" ph="(defn forks-held ...)" />
+            <marker date="1497137227000" expanded="true" signature="14707:14952" ph="(defn forks-requested ...)" />
+            <marker date="1497137227000" expanded="true" signature="14954:15473" ph="(defn show-state ...)" />
+            <marker date="1497137227000" expanded="true" signature="15475:15988" ph="(defn run-philosopher ...)" />
+            <marker date="1497137227000" expanded="true" signature="15990:16206" ph="(defn start ...)" />
+            <marker date="1497137227000" expanded="true" signature="16208:16265" ph="(defn stop-phil ...)" />
+            <marker date="1497137227000" expanded="true" signature="16267:16338" ph="(defn stop ...)" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init3737873730248953391.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2214">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="48" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="194" column="10" lean-forward="true" selection-start-line="194" selection-start-column="10" selection-end-line="194" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="50" column="6" lean-forward="false" selection-start-line="50" selection-start-column="6" selection-end-line="50" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="2205" column="0" lean-forward="false" selection-start-line="2205" selection-start-column="0" selection-end-line="2205" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/zip/ZipFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="797" column="31" lean-forward="false" selection-start-line="797" selection-start-column="31" selection-end-line="797" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="172" column="18" lean-forward="false" selection-start-line="172" selection-start-column="18" selection-end-line="172" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
           <folding />
         </state>
       </provider>

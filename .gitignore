@@ -2,5 +2,4 @@
 .idea/markdown-navigator/
 .idea/replstate.xml
 .nrepl-port
-target/repl-port
-target/stale/leiningen.core.classpath.extract-native-dependencies
+target/*

@@ -48,6 +48,9 @@
 
 (defn clear-screen [] (print "\033[2J"))
 
+(defn show-line [n & args]
+  (print (apply str (line-escape n) args)))
+
 (defn debug-pr
   "Send a status string down the status channel, but only if phil-id is in debug-phils or phil-id is nil and we haev
   debug ids set"
