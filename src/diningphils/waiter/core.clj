@@ -1,6 +1,7 @@
 (ns diningphils.waiter.core
   (:require [clojure.core.async :as a])
-  (:use [diningphils.utils]))
+  (:use [diningphils.utils])
+  (:import (java.util.concurrent CancellationException)))
 
 (def parameters
   {
@@ -157,22 +158,28 @@
           (recur))
         (show-state "Done.")))))
 
-(def waiter nil)
-(def philosophers [])
+(defn wait-for-done [phils wtr]
+  (letfn [(stop [] (doseq [pf phils] (future-cancel pf)))]
+    (let [end-ch (a/thread
+                   (doseq [phil phils] (try @phil (catch CancellationException e)))
+                   (future-cancel wtr)
+                   "Finished")
+          stop-ch (a/thread
+                    (show-line (+ (count phils) 6) "Press return to stop")
+                    (read-line)
+                    (stop)
+                    "Stopped")
+          [val _] (a/alts!! [end-ch stop-ch])]
+      (show-line (+ (count phils) 6) (str val "\n"))
+      'Done)))
 
 (defn start
   ([p]
    (initialize (merge parameters p))
-   (alter-var-root #'waiter (fn [_] (future (run-waiter))))
-   (alter-var-root #'philosophers (fn [_] (vec (map #(future (run-phil %1)) (range (count phil-names))))))
    (clear-screen)
-   (future
-     (doseq [phil philosophers] @phil)
-     (future-cancel waiter)
-     (show-line (+ (count philosophers) 6) "Finished"))
    (Thread/sleep 500)
-   (show-line (+ (count philosophers) 6) ""))
+   (wait-for-done
+     (vec (map #(future (run-phil %1)) (range (count phil-names))))
+     (future (run-waiter)))
+   )
   ([] (start {})))
-
-(defn stop []
-  (doseq [pf philosophers] (future-cancel pf)))
