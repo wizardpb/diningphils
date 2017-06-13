@@ -22,9 +22,6 @@
      }
     ))
 
-(defn- stop [phils]
-  (doseq [pf phils] (future-cancel pf)))
-
 (defn- wait-for-done [phils wtr]
   (let [end-ch (a/thread
                  (doseq [phil phils] (try @phil (catch CancellationException e)))
@@ -33,7 +30,7 @@
         stop-ch (a/thread
                   (show-line (+ (count phils) 6) "Press return to stop")
                   (read-line)
-                  (stop phils)
+                  (doseq [pf phils] (future-cancel pf))
                   "Stopped")
         [val _] (a/alts!! [end-ch])]
     (show-line (+ (count phils) 6) (str val "\n"))
