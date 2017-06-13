@@ -93,7 +93,7 @@
   )
 
 (defn think [ms]
-  (show-state "thinking (" ms ")..." )
+  (show-state "thinking..." )
   (Thread/sleep ms))
 
 (defn eat [ms]
@@ -121,13 +121,14 @@
             *right-fork* (mod (inc phil-id) (count (:phil-names sys)))
             *to-chan* (nth (:to-chans sys) phil-id)
             *from-chan* (nth (:from-chans sys) phil-id)]
+    (Thread/sleep (random-from-range [5 1]))
     (loop []
-      (think (random-from-range (get-in sys [:parameters :think-range])))
       ;; We're now hungry - if there is food left, get forks and eat
       (if (ask-waiter 'send-food)
         (do
           (get-forks sys)
           (eat (random-from-range (get-in sys [:parameters :eat-range])))
+          (think (random-from-range (get-in sys [:parameters :think-range])))
           (recur))
         (show-state "Done.")))))
 
