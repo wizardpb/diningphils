@@ -18,9 +18,3 @@
   [stop-fn]
   (alter-var-root #'system
     (fn [s] (when s (stop-fn s)))))
-
-(defn go
-  "Initializes the current development system and starts it running."
-  [sys-fn start-fn]
-  (init sys-fn)
-  (start start-fn))

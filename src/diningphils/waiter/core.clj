@@ -3,7 +3,7 @@
   (:use [diningphils.utils])
   (:import (java.util.concurrent CancellationException)))
 
-(defn allocate-fork [fork-id phil-id sys]
+(defn allocate-fork [sys fork-id phil-id]
   (let [fork (nth (:forks sys) fork-id)
         request (nth (:fork-requests sys) fork-id)]
     ;(debug-pr "allocate " fork-id "fork: " fork "request: " request)
@@ -19,7 +19,7 @@
         ;(debug-pr "sending fork, request: " request)
         (a/>!! (nth (:from-chans sys) phil-id) fork-id)))))
 
-(defn free-fork [fork-id phil-id sys]
+(defn free-fork [sys fork-id phil-id]
   (let [fork (nth (:forks sys) fork-id)
         request (nth (:fork-requests sys) fork-id)]
     ;(debug-pr "free " fork-id "fork: " fork "request: " request)
@@ -30,15 +30,15 @@
         (swap! fork (fn [_] requester))
         (a/>!! (nth (:from-chans sys) requester) fork-id)))))
 
-(defn request-forks [left right phil-id sys]
+(defn request-forks [sys phil-id left right]
   ;(debug-pr phil-id " requests " left " " right)
-  (doseq [f [left right]] (allocate-fork f phil-id sys)))
+  (doseq [f (sort [left right])] (allocate-fork sys f phil-id)))
 
-(defn free-forks [left right phil-id sys]
+(defn free-forks [sys phil-id left right]
   ;(debug-pr phil-id " frees " left " " right)
-  (doseq [f [left right]] (free-fork f phil-id sys) ))
+  (doseq [f [left right]] (free-fork sys f phil-id) ))
 
-(defn send-food [phil-id sys]
+(defn send-food [sys phil-id]
   ;; Return true if there is food left (> 0 @food-bowl) or there is unlimited food (nil? @food-bowl).
   ;; If there is food, remove a helping
   (a/>!! (nth (:from-chans sys) phil-id)
@@ -47,17 +47,22 @@
      (when food-left (swap! (:food-bowl sys) dec))
      (or (nil? food) food-left))))
 
-(defn is-food-left? [phil-id sys]
+(defn is-food-left? [sys phil-id]
   (a/>!! (nth (:from-chans sys) phil-id) (or (nil? @(:food-bowl sys)) (> @(:food-bowl sys) 0))))
 
+(defn display-state [sys phil-id & args]
+  (show-line 1 "food left: " (if-let [f @(:food-bowl sys)] f "unlimited"))
+  (apply show-line (+ phil-id 3) args)
+  (flush)
+  )
 ;(defn echo-sys [a b phil-id sys]
 ;  (println a b phil-id sys))
 
 (defn dispatch [msg phil-id sys]
   (when (not= msg :end)
-    (let [fn (var-get (find-var (symbol "diningphils.waiter.core" (name (first msg)))))
-          args (concat (rest msg) (list phil-id sys))]
-      (apply fn args))
+    (let [fn (var-get (find-var (symbol "diningphils.waiter.core" (name (first msg)))))]
+      ;(println "dispatch " msg "to" phil-id)
+      (apply fn sys phil-id (rest msg)))
     true))
 
 (defn run-waiter [sys]
@@ -76,12 +81,6 @@
 (def ^:dynamic *left-fork*)
 (def ^:dynamic *right-fork*)
 
-
-(defn show-state [sys & args]
-  (show-line 1 "food left: " (if-let [f @(:food-bowl sys)] f "unlimited"))
-  (apply show-line (concat (list (+ *phil-id* 3) (str *phil-name* ": ")) args)) (flush)
-  )
-
 (defn send-request [& args]
   (a/>!! *to-chan* args))
 
@@ -89,25 +88,28 @@
   (a/>!! *to-chan* args)
   (a/<!! *from-chan*))
 
-(defn think [sys]
-  (when (ask-waiter 'is-food-left?)
-    (show-state sys "thinking...")
-    (Thread/sleep (random-from-range (:think-range (:parameters sys))))))
+(defn show-state [& args]
+  (apply send-request 'display-state (str *phil-name* ": ") args)
+  )
 
-(defn eat [sys]
-  (show-state sys "eating with forks " *left-fork* " and " *right-fork* )
-  (Thread/sleep (random-from-range (:eat-range (:parameters sys))))
+(defn think [ms]
+  (show-state "thinking (" ms ")..." )
+  (Thread/sleep ms))
+
+(defn eat [ms]
+  (show-state "eating with forks " *left-fork* " and " *right-fork* )
+  (Thread/sleep ms)
   (send-request 'free-forks *left-fork* *right-fork*))
 
 (defn wait-fork [sys]
   (let [recv-fork (a/<!! *from-chan*)]
     (condp = recv-fork
-     *left-fork* (show-state sys "hungry, has fork " *left-fork* " (left)")
-     *right-fork* (show-state sys "hungry, has fork " *right-fork* " (right)")
+     *left-fork* (show-state "hungry, has fork " *left-fork* " (left)")
+     *right-fork* (show-state "hungry, has fork " *right-fork* " (right)")
      )))
 
 (defn get-forks [sys]
-  (show-state sys "hungry, requests forks " *left-fork* " and " *right-fork*)
+  (show-state "hungry, requests forks " *left-fork* " and " *right-fork*)
   (send-request 'request-forks *left-fork* *right-fork*)
   (wait-fork sys)
   (wait-fork sys))
@@ -120,12 +122,12 @@
             *to-chan* (nth (:to-chans sys) phil-id)
             *from-chan* (nth (:from-chans sys) phil-id)]
     (loop []
-      (think sys)
-      ;; We're hungry - if there is food left, get forks and eat
+      (think (random-from-range (get-in sys [:parameters :think-range])))
+      ;; We're now hungry - if there is food left, get forks and eat
       (if (ask-waiter 'send-food)
         (do
           (get-forks sys)
-          (eat sys)
+          (eat (random-from-range (get-in sys [:parameters :eat-range])))
           (recur))
-        (show-state sys "Done.")))))
+        (show-state "Done.")))))
 

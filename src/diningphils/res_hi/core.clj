@@ -87,7 +87,7 @@
   [fork]
   (count (take-while #(not (identical? % fork)) forks)))
 
-; The vector of philosopher states - each is a ref holding the satet. Saved back into 'philosophers'
+; The vector of philosopher states - each is a ref holding the state. Saved back into 'philosophers'
 (def phil-refs
   (doall
     (map #(ref {:name %1 :id %2 :forks (forks-for %2) :state nil})
