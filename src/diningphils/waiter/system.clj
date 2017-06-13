@@ -33,7 +33,6 @@
         stop-ch (a/thread
                   (show-line (+ (count phils) 6) "Press return to stop")
                   (read-line)
-                  ;(.suspend (Thread/currentThread))
                   (stop phils)
                   "Stopped")
         [val _] (a/alts!! [end-ch])]
