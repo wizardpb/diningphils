@@ -122,13 +122,14 @@
             *to-chan* (nth (:to-chans sys) phil-id)
             *from-chan* (nth (:from-chans sys) phil-id)]
     (Thread/sleep (random-from-range [5 1]))
-    (loop []
-      ;; We're now hungry - if there is food left, get forks and eat
+    (while (ask-waiter 'is-food-left?)
+      ;; We're now hungry - get forks. If there is food left get and eat it, otherwise we are done
+      (get-forks sys)
       (if (ask-waiter 'send-food)
         (do
-          (get-forks sys)
           (eat (random-from-range (get-in sys [:parameters :eat-range])))
-          (think (random-from-range (get-in sys [:parameters :think-range])))
-          (recur))
-        (show-state "Done.")))))
+          (think (random-from-range (get-in sys [:parameters :think-range]))))
+        (do
+          (send-request 'free-forks *left-fork* *right-fork*)
+          (show-state "Done."))))))
 
