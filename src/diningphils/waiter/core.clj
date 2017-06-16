@@ -1,7 +1,6 @@
 (ns diningphils.waiter.core
   (:require [clojure.core.async :as a])
-  (:use [diningphils.utils])
-  (:import (java.util.concurrent CancellationException)))
+  (:use [diningphils.utils]))
 
 (defn allocate-fork [sys fork-id phil-id]
   (let [fork (nth (:forks sys) fork-id)
@@ -51,9 +50,8 @@
   (a/>!! (nth (:from-chans sys) phil-id) (or (nil? @(:food-bowl sys)) (> @(:food-bowl sys) 0))))
 
 (defn display-state [sys phil-id & args]
-  (show-line 1 "food left: " (if-let [f @(:food-bowl sys)] f "unlimited"))
+  (show-line 1 "food left:" (if-let [f @(:food-bowl sys)] f "unlimited"))
   (apply show-line (+ phil-id 3) args)
-  (flush)
   )
 ;(defn echo-sys [a b phil-id sys]
 ;  (println a b phil-id sys))
@@ -97,19 +95,19 @@
   (Thread/sleep ms))
 
 (defn eat [ms]
-  (show-state "eating with forks " *left-fork* " and " *right-fork* )
+  (show-state "eating with forks" *left-fork* "and" *right-fork* )
   (Thread/sleep ms)
   (send-request 'free-forks *left-fork* *right-fork*))
 
 (defn wait-fork [sys]
   (let [recv-fork (a/<!! *from-chan*)]
     (condp = recv-fork
-     *left-fork* (show-state "hungry, has fork " *left-fork* " (left)")
-     *right-fork* (show-state "hungry, has fork " *right-fork* " (right)")
+     *left-fork* (show-state "hungry, has fork" *left-fork* "(left)")
+     *right-fork* (show-state "hungry, has fork" *right-fork* "(right)")
      )))
 
 (defn get-forks [sys]
-  (show-state "hungry, requests forks " *left-fork* " and " *right-fork*)
+  (show-state "hungry, requests forks" *left-fork* "and" *right-fork*)
   (send-request 'request-forks *left-fork* *right-fork*)
   (wait-fork sys)
   (wait-fork sys))

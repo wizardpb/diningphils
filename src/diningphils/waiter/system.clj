@@ -29,23 +29,31 @@
     (assoc :phils (vec (map #(future (run-phil %1 sys)) (range (count (:phil-names sys))))))
     (assoc :waiter (future (run-waiter sys)))))
 
+(defn clean-fn [sys]
+  (doseq [phil (:phils sys)] (try @phil (catch CancellationException e)))
+  (future-cancel (:waiter sys)))
 
-(defn wait-for-done [sys]
-  (let [phils (:phils sys)
-        end-ch (a/thread
-                 (doseq [phil phils] (try @phil (catch CancellationException e)))
-                 (future-cancel (:waiter sys))
-                 "Finished")
-        stop-ch (a/thread
-                  (show-line (+ (count phils) 6) "Press return to stop")
-                  (read-line)
-                  (doseq [pf phils] (future-cancel pf))
-                  "Stopped")
-        [val _] (a/alts!! [end-ch stop-ch])
-        ;[val _] (a/alts!! [end-ch])
-        ]
-    (show-line (+ (count phils) 6) (str val "\n"))
-    'Done))
+(defn stop-fn [sys]
+  (doseq [pf (:phils sys)] (future-cancel pf))
+  (future-cancel (:waiter sys)))
+
+;(defn wait-for-done [sys]
+;  (let [phils (:phils sys)
+;        end-ch (a/thread
+;                 (doseq [phil phils] (try @phil (catch CancellationException e)))
+;                 (future-cancel (:waiter sys))
+;                 "Finished")
+;        stop-ch (a/thread
+;                  (show-line (+ (count phils) 6) "Press return to stop")
+;                  (read-line)
+;                  (doseq [pf phils] (future-cancel pf))
+;                  (future-cancel (:waiter sys))
+;                  "Stopped")
+;        [val _] (a/alts!! [end-ch stop-ch])
+;        ;[val _] (a/alts!! [end-ch])
+;        ]
+;    (show-line (+ (count phils) 6) (str val "\n"))
+;    'Done))
 -
 (defn init
   ([p] (sys/init (partial init-fn p)))
@@ -58,5 +66,5 @@
   ([p]
    (init p)
    (start)
-   (wait-for-done sys/system))
+   (sys/wait-for-done clean-fn stop-fn))
   ([] (go {})))

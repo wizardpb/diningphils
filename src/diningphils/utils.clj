@@ -19,7 +19,8 @@
 ;; Some utility functions for solving Edsger Dijkstra's famous dining philosophers problem
 ;;
 ;;
-(ns diningphils.utils)
+(ns diningphils.utils
+  (:require [clojure.string :as str]))
 
 ;; Status printing
 (def logger
@@ -49,7 +50,8 @@
 (defn clear-screen [] (print "\033[2J"))
 
 (defn show-line [n & args]
-  (print (apply str (line-escape n) args)))
+  (apply log (line-escape n) (str/join " " args))
+  (flush))
 
 (defn debug-pr
   "Send a status string down the status channel, but only if phil-id is in debug-phils or phil-id is nil and we haev
