@@ -1,5 +1,6 @@
 (ns diningphils.waiter.core
-  (:require [clojure.core.async :as a])
+  (:require [clojure.core.async :as a]
+            [diningphils.system :as sys])
   (:use [diningphils.utils]))
 
 (defn allocate-fork [sys fork-id phil-id]
@@ -37,20 +38,20 @@
   ;(debug-pr phil-id " frees " left " " right)
   (doseq [f [left right]] (free-fork sys f phil-id) ))
 
-(defn send-food [sys phil-id]
-  ;; Return true if there is food left (> 0 @food-bowl) or there is unlimited food (nil? @food-bowl).
-  ;; If there is food, remove a helping
-  (a/>!! (nth (:from-chans sys) phil-id)
-    (let [food @(:food-bowl sys)
-         food-left (and food (> food 0))]
-     (when food-left (swap! (:food-bowl sys) dec))
-     (or (nil? food) food-left))))
+(defn get-next-helping [sys]
+  (dosync
+    (let [fb (:food-bowl sys)
+          food (first @fb)]
+      (alter fb rest)
+      food)))
 
-(defn is-food-left? [sys phil-id]
-  (a/>!! (nth (:from-chans sys) phil-id) (or (nil? @(:food-bowl sys)) (> @(:food-bowl sys) 0))))
+(defn send-food [sys phil-id]
+  ;; Return a eat time if there is food left, otherwise a sentinel - can't put nil on a channel
+  (a/>!! (nth (:from-chans sys) phil-id)
+    (if-let [food (get-next-helping sys)] food :no-more)))
 
 (defn display-state [sys phil-id & args]
-  (show-line 1 "food left:" (if-let [f @(:food-bowl sys)] f "unlimited"))
+  (show-line 1 "food left:" (if (get-in sys [:parameters :food-amount]) (count @(:food-bowl sys)) "unlimited"))
   (apply show-line (+ phil-id 3) args)
   )
 ;(defn echo-sys [a b phil-id sys]
@@ -58,17 +59,20 @@
 
 (defn dispatch [msg phil-id sys]
   (when (not= msg :end)
+    (debug-pr "Waiter" nil "msg received: " msg)
     (let [fn (var-get (find-var (symbol "diningphils.waiter.core" (name (first msg)))))]
-      ;(println "dispatch " msg "to" phil-id)
       (apply fn sys phil-id (rest msg)))
     true))
 
 (defn run-waiter [sys]
-  (let [to-chans (:to-chans sys)
-        chan-indices (:chan-indices sys)]
-    (loop [[v c] (a/alts!! to-chans)]
-      (if (dispatch v (get chan-indices c) sys)
-       (recur (a/alts!! to-chans))))))
+  (try
+    (let [to-chans (:to-chans sys)
+          chan-indices (:chan-indices sys)]
+      (debug-pr "Waiter" nil "started")
+      (loop [[v c] (a/alts!! to-chans)]
+        (if (dispatch v (get chan-indices c) sys)
+          (recur (a/alts!! to-chans)))))
+    (catch Throwable e (debug-pr "Waiter" nil "exception: " e "\n" (.printStackTrace e)))))
 
 ; Philosoper state fns
 
@@ -83,12 +87,11 @@
   (a/>!! *to-chan* args))
 
 (defn ask-waiter [& args]
-  (a/>!! *to-chan* args)
+  (apply send-request args)
   (a/<!! *from-chan*))
 
 (defn show-state [& args]
-  (apply send-request 'display-state (str *phil-name* ": ") args)
-  )
+  (apply send-request 'display-state (str *phil-name* ":") args))
 
 (defn think [ms]
   (show-state "thinking..." )
@@ -112,22 +115,28 @@
   (wait-fork sys)
   (wait-fork sys))
 
-(defn run-phil [phil-id sys]
+(defn request-food []
+  (let [food (ask-waiter 'send-food)]
+    (if (not= food :no-more) food)))
+
+(defn run-phil [sys phil-id left-fork right-fork]
   (binding [*phil-id* phil-id
             *phil-name* (nth (:phil-names sys) phil-id)
-            *left-fork* phil-id
-            *right-fork* (mod (inc phil-id) (count (:phil-names sys)))
+            *left-fork* left-fork
+            *right-fork*  right-fork                                  ;(mod (inc phil-id) (count (:phil-names sys)))
             *to-chan* (nth (:to-chans sys) phil-id)
             *from-chan* (nth (:from-chans sys) phil-id)]
     (Thread/sleep (random-from-range [5 1]))
-    (while (ask-waiter 'is-food-left?)
+    (loop []
       ;; We're now hungry - get forks. If there is food left get and eat it, otherwise we are done
       (get-forks sys)
-      (if (ask-waiter 'send-food)
+      (if-let [food-amount (request-food)]
         (do
-          (eat (random-from-range (get-in sys [:parameters :eat-range])))
-          (think (random-from-range (get-in sys [:parameters :think-range]))))
+          (eat food-amount)
+          (think (random-from-range (get-in sys [:parameters :think-range])))
+          (recur))
         (do
           (send-request 'free-forks *left-fork* *right-fork*)
-          (show-state "Done."))))))
+          (show-state "Done."))))
+    ))
 

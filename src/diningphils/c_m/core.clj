@@ -134,13 +134,13 @@
       ;; channels become the next phils left neighbor channels, with the 'from' becoming the 'to' channels
       (let
         [
-          chvec (build-channels (inc phil-id) from-right to-right)
-          this-record (if (zero? phil-id)
-          ;; First record - make the whole think circular by swapping 'to' and 'from' from the last record
-          (new-ch-record (:from-right (last chvec)) (:to-right (last chvec)) to-right from-right)
-          ;; Otherwise use the passed in channels of the left neightbor and new ones for the right
-          (new-ch-record to-left from-left to-right from-right))
-          ]
+         chvec (build-channels (inc phil-id) from-right to-right)
+         this-record (if (zero? phil-id)
+                       ;; First record - make the whole think circular by swapping 'to' and 'from' from the last record
+                       (new-ch-record (:from-right (last chvec)) (:to-right (last chvec)) to-right from-right)
+                       ;; Otherwise use the passed in channels of the left neightbor and new ones for the right
+                       (new-ch-record to-left from-left to-right from-right))
+         ]
         (concat [this-record] chvec)))))
 
 (def channels

@@ -13,7 +13,9 @@
     {
      :parameters    params
      :phil-names    phil-names
-     :food-bowl     (atom (:food-amount params))
+     :food-bowl     (ref (if-let [f (:food-amount params)]
+                           (repeatedly f (partial random-from-range (:eat-range params)))
+                           (repeatedly (partial random-from-range (:eat-range params)))))
      :to-chans      to-chans
      :from-chans    (vec (repeatedly (count phil-names) (partial a/chan 1)))
      :chan-indices  (into {} (map-indexed #(vector %2 %1)) to-chans)
@@ -25,36 +27,26 @@
 (defn start-fn [sys]
   (clear-screen)
   (Thread/sleep 500)
-  (-> sys
-    (assoc :phils (vec (map #(future (run-phil %1 sys)) (range (count (:phil-names sys))))))
-    (assoc :waiter (future (run-waiter sys)))))
+  (let [cnt (count (:phil-names sys))]
+    (-> sys
+     (assoc :phils (vec (map #(future (run-phil sys %1 %1 %2))
+                          (range cnt)
+                          (take cnt (rest (cycle (range 5)))))))
+     (assoc :waiter (future (run-waiter sys))))))
+
+(defn stop-waiter [sys]
+  (a/>!! (first (:to-chans sys)) :end))
 
 (defn clean-fn [sys]
   (doseq [phil (:phils sys)] (try @phil (catch CancellationException e)))
-  (future-cancel (:waiter sys)))
+  (stop-waiter sys)
+  @(:waiter sys))
 
 (defn stop-fn [sys]
-  (doseq [pf (:phils sys)] (future-cancel pf))
-  (future-cancel (:waiter sys)))
+  (doseq [phil (:phils sys)] (future-cancel phil))
+  (stop-waiter sys)
+  @(:waiter sys))
 
-;(defn wait-for-done [sys]
-;  (let [phils (:phils sys)
-;        end-ch (a/thread
-;                 (doseq [phil phils] (try @phil (catch CancellationException e)))
-;                 (future-cancel (:waiter sys))
-;                 "Finished")
-;        stop-ch (a/thread
-;                  (show-line (+ (count phils) 6) "Press return to stop")
-;                  (read-line)
-;                  (doseq [pf phils] (future-cancel pf))
-;                  (future-cancel (:waiter sys))
-;                  "Stopped")
-;        [val _] (a/alts!! [end-ch stop-ch])
-;        ;[val _] (a/alts!! [end-ch])
-;        ]
-;    (show-line (+ (count phils) 6) (str val "\n"))
-;    'Done))
--
 (defn init
   ([p] (sys/init (partial init-fn p)))
   ([] (sys/init (partial init-fn {}))))
@@ -68,3 +60,5 @@
    (start)
    (sys/wait-for-done clean-fn stop-fn))
   ([] (go {})))
+
+;(set-debug (range 5))
