@@ -1,3 +1,38 @@
+;;
+;; Copyright 2017 Prajna Inc.
+;;
+;; Licensed under the Apache License, Version 2.0 (the "License");
+;; you may not use this file except in compliance with the License.
+;; You may obtain a copy of the License at
+;;
+;;     http://www.apache.org/licenses/LICENSE-2.0
+;;
+;; Unless required by applicable law or agreed to in writing, software
+;; distributed under the License is distributed on an "AS IS" BASIS,
+;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+;; See the License for the specific language governing permissions and
+;; limitations under the License.
+;;
+;; Edsger Dijkstra's famous dining philosophers problem, solved using a separate 'Waiter' process to allocate forks
+;;
+;; Each philosoher is represented as a thread (a future) that repeated gets hungry, asks the wait for
+;; forks and food, eats and thinks. The waiter prevents deadlock by synchronizing the allocation of forks for
+;; each philosopher. For each fork, it tracks ownership and requests. Since each fork is shared between two
+;; philosophers, the fork is either free or owned by one philosopher, with the other philosopher possible requesting
+;; it. This state can therefore be represented with two atoms per fork, one holding the owner and one holding a
+;; requester. A nil value in the owner atom indicates the fork is free.
+;;
+;; The waiter is connected to each philosopher by two core.async channels, over which it receives requests and provides
+;; resources. Requests are sent by the philosophers in the form of lists which are treated as literal representation
+;; of function calls. Implenting these functions provides the sent of requests the waiter understands
+;;
+;; To run with status display, evaluate:
+;;
+;; (go)
+;;
+;; from the diningphils.waiter.system namespace. Hitting any key will stop the simulation.
+;;
+
 (ns diningphils.waiter.core
   (:require [clojure.core.async :as a]
             [diningphils.system :as sys])

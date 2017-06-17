@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f934fb6-f015-42cf-bada-b20987d09460" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_java_classpath_0_2_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_namespace_0_2_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/user.clj" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_nrepl_0_2_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_tools_nrepl_0_2_11.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/diningphils.iml" afterPath="$PROJECT_DIR$/diningphils.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.clj" afterPath="$PROJECT_DIR$/project.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/res_hi/system.clj" afterPath="$PROJECT_DIR$/src/diningphils/res_hi/system.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/system.clj" afterPath="$PROJECT_DIR$/src/diningphils/system.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/utils.clj" afterPath="$PROJECT_DIR$/src/diningphils/utils.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/waiter/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/waiter/core.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/waiter/system.clj" afterPath="$PROJECT_DIR$/src/diningphils/waiter/system.clj" />
     </list>
@@ -39,8 +36,8 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="92" column="44" lean-forward="false" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -49,8 +46,8 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="3" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+            <state relative-caret-position="506">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -69,8 +66,8 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="446">
+              <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -129,8 +126,8 @@
       <file leaf-file-name="utils.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+            <state relative-caret-position="195">
+              <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -139,8 +136,8 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="285">
+              <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -149,8 +146,8 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+            <state relative-caret-position="435">
+              <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -242,13 +239,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/diningphils/utils.clj" />
-        <option value="$PROJECT_DIR$/src/diningphils/res_hi/system.clj" />
-        <option value="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
-        <option value="$PROJECT_DIR$/src/diningphils/system.clj" />
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/dev/user.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/res_hi/system.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/system.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/utils.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/waiter/system.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/waiter/core.clj" />
       </list>
@@ -468,7 +465,7 @@
       <recent name="$PROJECT_DIR$/src/diningphils/waiter" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1497662908004">{:repl-history {:ide [], :local [{:command &quot;(var-get (find-var 'diningphils.waiter.core/echo-sys))&quot;, :offset 9, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def  echo-sys)&quot;, :offset 5} {:command &quot;(fdef s 'diningphils.waiter.core/echo-sys)&quot;, :offset 7, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def s 'diningphils.waiter.core/echo-sys)&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var s))&quot;, :offset 20, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;((var-get (find-var s)) 1 {})&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; 'echo-sys)))&quot;, :offset 62, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; \&quot;echo-sys\&quot;)))&quot;, :offset 54, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;echo-sys&quot;, :offset 8, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace echo-sys)&quot;, :offset 11, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace \&quot;echo-sys\&quot;)&quot;, :offset 12, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace 'echo-sys)&quot;, :offset 12, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace 'diningphils.waiter.core/echo-sys)&quot;, :offset 36, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(get (ns-map *ns*) 'echo-sys)&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;((get (ns-map *ns*) 'echo-sys) 1 {})&quot;, :offset 35, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def s 'echo-sys)&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;s&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; s)))&quot;, :offset 54, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; (name s))))&quot;, :offset 60, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(ech0-sys) 1 {})&quot;, :offset 26, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(echo-sys) 1 {})&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(echo-sys :a) 1 {})&quot;, :offset 23, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(echo-sys :a :b) 1 {})&quot;, :offset 26, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def s)&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(alter-var-root #'s (constantly 1))&quot;, :offset 33, :ns &quot;user&quot;} {:command &quot;(alter-var-root #'s (constantly 2))&quot;, :offset 33, :ns &quot;user&quot;} {:command &quot;(alter-var-root #'s (constantly 2 (go)))&quot;, :offset 37, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(apply + 1 2 (range 3))&quot;, :offset 21, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(apply + 1 2 (rest '(1)))&quot;, :offset 22, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(run-phil 0 sys/system)&quot;, :offset 22, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(binding [*to-chan (first (:to-chans sys/system))] (show-state \&quot;Some state\&quot;))&quot;, :offset 74, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(binding [*to-chan* (first (:to-chans sys/system))] (show-state \&quot;Some state\&quot;))&quot;, :offset 78, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;w&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(a/&gt;!! (first (:to-chans sys/system)) '(display-state \&quot;Some state\&quot;))&quot;, :offset 65, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(binding [*to-chan* (first (:to-chans sys/system)) *phil-name* \&quot;Me\&quot;] (show-state \&quot;Some state\\n\&quot;))&quot;, :offset 94, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(join)&quot;, :offset 6} {:command &quot;(binding [*to-chan* (first (:to-chans sys/system)) *phil-name* \&quot;Me\&quot;] (show-state \&quot;Some state\&quot;))&quot;, :offset 12, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(future-cancel w)&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def w (future (run-waiter sys/system)))&quot;, :offset 7, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;@w&quot;, :offset 2, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(a/&gt;!! (first (:to-chans sys/system)) :end)&quot;, :offset 43, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(a/&lt;!! (first (:to-chans sys/system)) :end)&quot;, :offset 4, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(go {:food-left nil :think-range [2000 1000]})&quot;, :offset 46, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(sort (reverse [3 2]))&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(reverse (sort [3 2]))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(sort #(&lt; a b) [3 2])&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(sort #(&lt; %1 %2) [3 2])&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(sort [3 2])&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(start)&quot;, :offset 6, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(stop)&quot;, :offset 5, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(apply println 1 \&quot;A\&quot; \&quot;string\&quot;)&quot;, :offset 28, :ns &quot;user&quot;} {:command &quot;(apply println 1 (list \&quot;A\&quot; \&quot;string\&quot;))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(conj \\: \&quot;Me\&quot;)&quot;, :offset 12, :ns &quot;user&quot;} {:command &quot;(conj \&quot;Me\&quot; \\:)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(seq \&quot;abc\&quot;)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(fork-ids-for 0)&quot;, :offset 15, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(fork-ids-for 4)&quot;, :offset 15, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(fork-ids-for 5)&quot;, :offset 15, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(first (fork-ids-for 4))&quot;, :offset 7, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(last (fork-ids-for 4))&quot;, :offset 5, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(nth (:forks sys/system) (if (&gt; 4 0) 0 4))&quot;, :offset 40, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(nth (:forks sys/system) (if (&gt; *left-fork-id* *right-fork-id*) *right-fork-id* *left-fork-id*))&quot;, :offset 18} {:command &quot;(def s (repeatedly (partial random-from-range [1000 10000])))&quot;, :offset 57, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(first s)&quot;, :offset 8, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(def s (repeatedly 10 (partial random-from-range [1000 10000])))&quot;, :offset 21, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(first s) (def s (rest s))&quot;, :offset 24, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(set-debug 0)&quot;, :offset 13, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(set-debug (range 0 4))&quot;, :offset 21, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(set-debug (range 0 5))&quot;, :offset 21, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(:food-bowl sys)&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(:food-bowl sys/system)&quot;, :offset 22, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;sys/system&quot;, :offset 10, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(get-next-helping sys/system)&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(display-state sys/system 0 \&quot;test\&quot;)&quot;, :offset 33, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def f (future (run-waiter sys/system)))&quot;, :offset 40, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(stop-waiter sys/system)&quot;, :offset 23, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(init)&quot;, :offset 5, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(assoc sys/system :run false)&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def sys/system (assoc sys/system :run false))&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(alter-var-root #'sys/system #(assoc % :run false))&quot;, :offset 38, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def f (future (run-phil 0 sys/system)))&quot;, :offset 37, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;f&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;@f&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(go)&quot;, :offset 3, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(take 5 (cycle (range 5)))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 1 (cycle (range 5))))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (cycle (range 5))))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(take 5 (interleave (cycle (range 1 6)) (cycle (range 5))))&quot;, :offset 37, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (cycle (range 1 6)))))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (cycle (range 1 4)))))&quot;, :offset 67, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (cycle (range 1 5)))))&quot;, :offset 68, :ns &quot;user&quot;} {:command &quot;(take 6 (cycle (range 5)))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(take 7 (cycle (range 5)))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (rest (cycle (range 5))))))&quot;, :offset 57, :ns &quot;user&quot;} {:command &quot;w/system&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;w/go&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(set-debug (range 5))&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;*ns*&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(w/go)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(refresh)&quot;, :offset 8, :ns &quot;user&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1497725901491">{:repl-history {:ide [], :local [{:command &quot;(var-get (find-var 'diningphils.waiter.core/echo-sys))&quot;, :offset 9, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def  echo-sys)&quot;, :offset 5} {:command &quot;(fdef s 'diningphils.waiter.core/echo-sys)&quot;, :offset 7, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def s 'diningphils.waiter.core/echo-sys)&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var s))&quot;, :offset 20, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;((var-get (find-var s)) 1 {})&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; 'echo-sys)))&quot;, :offset 62, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; \&quot;echo-sys\&quot;)))&quot;, :offset 54, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;echo-sys&quot;, :offset 8, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace echo-sys)&quot;, :offset 11, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace \&quot;echo-sys\&quot;)&quot;, :offset 12, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace 'echo-sys)&quot;, :offset 12, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(namespace 'diningphils.waiter.core/echo-sys)&quot;, :offset 36, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(get (ns-map *ns*) 'echo-sys)&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;((get (ns-map *ns*) 'echo-sys) 1 {})&quot;, :offset 35, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def s 'echo-sys)&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;s&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; s)))&quot;, :offset 54, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(var-get (find-var (symbol \&quot;diningphils.waiter.core\&quot; (name s))))&quot;, :offset 60, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(ech0-sys) 1 {})&quot;, :offset 26, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(echo-sys) 1 {})&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(echo-sys :a) 1 {})&quot;, :offset 23, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(dispatch '(echo-sys :a :b) 1 {})&quot;, :offset 26, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def s)&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(alter-var-root #'s (constantly 1))&quot;, :offset 33, :ns &quot;user&quot;} {:command &quot;(alter-var-root #'s (constantly 2))&quot;, :offset 33, :ns &quot;user&quot;} {:command &quot;(alter-var-root #'s (constantly 2 (go)))&quot;, :offset 37, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(apply + 1 2 (range 3))&quot;, :offset 21, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(apply + 1 2 (rest '(1)))&quot;, :offset 22, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(run-phil 0 sys/system)&quot;, :offset 22, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(binding [*to-chan (first (:to-chans sys/system))] (show-state \&quot;Some state\&quot;))&quot;, :offset 74, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(binding [*to-chan* (first (:to-chans sys/system))] (show-state \&quot;Some state\&quot;))&quot;, :offset 78, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;w&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(a/&gt;!! (first (:to-chans sys/system)) '(display-state \&quot;Some state\&quot;))&quot;, :offset 65, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(binding [*to-chan* (first (:to-chans sys/system)) *phil-name* \&quot;Me\&quot;] (show-state \&quot;Some state\\n\&quot;))&quot;, :offset 94, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(join)&quot;, :offset 6} {:command &quot;(binding [*to-chan* (first (:to-chans sys/system)) *phil-name* \&quot;Me\&quot;] (show-state \&quot;Some state\&quot;))&quot;, :offset 12, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(future-cancel w)&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def w (future (run-waiter sys/system)))&quot;, :offset 7, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;@w&quot;, :offset 2, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(a/&gt;!! (first (:to-chans sys/system)) :end)&quot;, :offset 43, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(a/&lt;!! (first (:to-chans sys/system)) :end)&quot;, :offset 4, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(go {:food-left nil :think-range [2000 1000]})&quot;, :offset 46, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(sort (reverse [3 2]))&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(reverse (sort [3 2]))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(sort #(&lt; a b) [3 2])&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(sort #(&lt; %1 %2) [3 2])&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(sort [3 2])&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(start)&quot;, :offset 6, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(stop)&quot;, :offset 5, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(apply println 1 \&quot;A\&quot; \&quot;string\&quot;)&quot;, :offset 28, :ns &quot;user&quot;} {:command &quot;(apply println 1 (list \&quot;A\&quot; \&quot;string\&quot;))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(conj \\: \&quot;Me\&quot;)&quot;, :offset 12, :ns &quot;user&quot;} {:command &quot;(conj \&quot;Me\&quot; \\:)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(seq \&quot;abc\&quot;)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(fork-ids-for 0)&quot;, :offset 15, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(fork-ids-for 4)&quot;, :offset 15, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(fork-ids-for 5)&quot;, :offset 15, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(first (fork-ids-for 4))&quot;, :offset 7, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(last (fork-ids-for 4))&quot;, :offset 5, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(nth (:forks sys/system) (if (&gt; 4 0) 0 4))&quot;, :offset 40, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(nth (:forks sys/system) (if (&gt; *left-fork-id* *right-fork-id*) *right-fork-id* *left-fork-id*))&quot;, :offset 18} {:command &quot;(def s (repeatedly (partial random-from-range [1000 10000])))&quot;, :offset 57, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(first s)&quot;, :offset 8, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(def s (repeatedly 10 (partial random-from-range [1000 10000])))&quot;, :offset 21, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(first s) (def s (rest s))&quot;, :offset 24, :ns &quot;diningphils.res-hi.system&quot;} {:command &quot;(set-debug 0)&quot;, :offset 13, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(set-debug (range 0 4))&quot;, :offset 21, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(set-debug (range 0 5))&quot;, :offset 21, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(:food-bowl sys)&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(:food-bowl sys/system)&quot;, :offset 22, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;sys/system&quot;, :offset 10, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(get-next-helping sys/system)&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(display-state sys/system 0 \&quot;test\&quot;)&quot;, :offset 33, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def f (future (run-waiter sys/system)))&quot;, :offset 40, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(stop-waiter sys/system)&quot;, :offset 23, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(init)&quot;, :offset 5, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(assoc sys/system :run false)&quot;, :offset 28, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def sys/system (assoc sys/system :run false))&quot;, :offset 16, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(alter-var-root #'sys/system #(assoc % :run false))&quot;, :offset 38, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(def f (future (run-phil 0 sys/system)))&quot;, :offset 37, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;f&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;@f&quot;, :offset 1, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(go)&quot;, :offset 3, :ns &quot;diningphils.waiter.system&quot;} {:command &quot;(take 5 (cycle (range 5)))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 1 (cycle (range 5))))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (cycle (range 5))))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(take 5 (interleave (cycle (range 1 6)) (cycle (range 5))))&quot;, :offset 37, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (cycle (range 1 6)))))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (cycle (range 1 4)))))&quot;, :offset 67, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (cycle (range 1 5)))))&quot;, :offset 68, :ns &quot;user&quot;} {:command &quot;(take 6 (cycle (range 5)))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(take 7 (cycle (range 5)))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;(take 5 (partition 2 (interleave (cycle (range 5)) (rest (cycle (range 5))))))&quot;, :offset 57, :ns &quot;user&quot;} {:command &quot;w/system&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;w/go&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(set-debug (range 5))&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;*ns*&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(w/go)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(refresh)&quot;, :offset 8, :ns &quot;user&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -826,7 +823,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1436" height="873" extended-state="0" />
+    <frame x="0" y="23" width="1436" height="873" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.49713057" order="0" side_tool="false" content_ui="tabs" />
@@ -834,10 +831,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="123" width="1236" height="673" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40613025" sideWeight="0.5516499" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26181355" sideWeight="0.5516499" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40613025" sideWeight="0.44835007" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19942611" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26181355" sideWeight="0.44835007" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12195122" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.3507891" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25681493" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -872,7 +869,8 @@
     <MESSAGE value="Removed sleep value dislay from think()" />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="- Better version of resource hierarchy solution&#10;- Refactored start-stop logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Better version of resource hierarchy solution&#10;- Refactored start-stop logic" />
+    <MESSAGE value="- Refactored start-stop logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Refactored start-stop logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1012,14 +1010,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="92" column="44" lean-forward="false" selection-start-line="92" selection-start-column="44" selection-end-line="92" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -1028,26 +1018,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="5908" column="6" lean-forward="false" selection-start-line="5908" selection-start-column="6" selection-end-line="5908" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1084,26 +1058,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="33" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/system.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="3" lean-forward="false" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        <state relative-caret-position="506">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="33" lean-forward="false" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/system.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="31" column="62" lean-forward="true" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
+        <state relative-caret-position="435">
+          <caret line="29" column="2" lean-forward="true" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="446">
+          <caret line="30" column="7" lean-forward="false" selection-start-line="30" selection-start-column="7" selection-end-line="30" selection-end-column="7" />
           <folding />
         </state>
       </provider>

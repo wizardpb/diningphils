@@ -12,9 +12,6 @@
 ;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ;; See the License for the specific language governing permissions and
 ;; limitations under the License.
-;; Each philosopher is represented as a thread and a state map. The thread repeatedly takes forks, eats, frees forks and thinks
-;; until all the food is gone. The state map holds the eating state, the forks to the left and right of the philosopher,
-;; and a food amount.
 ;;
 ;; Some utility functions for solving Edsger Dijkstra's famous dining philosophers problem
 ;;
