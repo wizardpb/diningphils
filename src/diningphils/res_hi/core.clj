@@ -45,7 +45,9 @@
 (def ^:dynamic *higher-fork*)
 
 (defn show-state [& args]
-  (show-line 1 "food left:" (let [f @(:food-bowl sys/system)] (if f f "unlimited")))
+  (show-line 1 "food left:" (if (get-in sys/system [:parameters :food-amount])
+                              (count @(:food-bowl sys/system))
+                              "unlimited"))
   (apply show-line (+ *phil-id* 3) (str *phil-name* ":") args))
 
 (defn take-fork [fork]
@@ -70,13 +72,13 @@
 (defn get-food []
   (dosync
     (let [fb (:food-bowl sys/system)
-          food-left @fb]
-      (if (and food-left (> food-left 0)) (alter fb dec))
-      (or (nil? food-left) (> food-left 0)))))
+          food (first @fb)]
+      (alter fb rest)
+      food)))
 
-(defn eat []
+(defn eat [foodAmount]
   (show-state "eating...")
-  (Thread/sleep (random-from-range (get-in sys/system [:parameters :eat-range])))
+  (Thread/sleep foodAmount)
   (drop-forks))
 
 (defn think []
@@ -98,9 +100,9 @@
       (loop []
         ;; Start out hungry
         (get-forks)
-        (if (get-food)
+        (if-let [food (get-food)]
           (do
-            (eat) (think)
+            (eat food) (think)
             (recur))
           (do
             (drop-forks)))

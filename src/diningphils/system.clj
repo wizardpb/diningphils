@@ -47,13 +47,18 @@
         end-ch (a/thread
                  (clean-fn system)
                  "Finished")
-        stop-ch (a/thread
-                  (show-line (+ (count phils) 6) "Press return to stop")
-                  (read-line)
-                  (stop stop-fn)
-                  "Stopped")
+        stop-ch (if (System/getProperty "nostop")
+                  (a/chan 1)                         ;Dummy chan to stub out stop - just for running under IntelliJ
+                  (a/thread
+                   (show-line (+ (count phils) 6) "Press return to stop")
+                   (read-line)
+                   (stop stop-fn)
+                   "Stopped"))
         [val _] (a/alts!! [end-ch stop-ch])
         ;[val _] (a/alts!! [end-ch])
         ]
     (show-line (+ (count phils) 6) val "\n")
     'Done))
+
+(defn get-parameter [param]
+  (get-in system [:parameters param]))

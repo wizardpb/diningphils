@@ -33,33 +33,43 @@
 ;; from the diningphils.res-hi.system namespace. Hitting any key will stop the simulation.
 ;;
 
-(ns diningphils.res-hi.system
-  (:require [diningphils.system :as sys]
-            [clojure.core.async :as a])
+(ns diningphils.c-m-agents.system
+  (:require [diningphils.system :as sys])
   (:use [diningphils.utils]
-        [diningphils.res-hi.core])
-  (:import (java.util.concurrent CancellationException)))
+        [diningphils.c-m-agents.core])
+  )
+
+(defn connect-agents [agents]
+  (letfn [(connect [id a]
+            (let [n (count agents)
+                  left (nth agents (mod (dec id) n))
+                  right (nth agents (mod (inc id) n))]
+              (assoc a :neighbors [left right])))]
+    (map-indexed connect agents)))
 
 (defn init-fn [p]
   (let [phil-names ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"]
         base-params {:food-amount 10 :eat-range [10000 2000] :think-range [10000 2000]}
-        params (merge base-params p)]
+        params (merge base-params p)
+        forks (vec (map #(atom (initialized-fork %)) (count phil-names)))]
     {
-     :parameters    params
-     :phil-names    phil-names
-     :food-bowl     (ref (if-let [f (:food-amount params)]
-                           (repeatedly f (partial random-from-range (:eat-range params)))
-                           (repeatedly (partial random-from-range (:eat-range params)))))
-     :forks         (vec (repeatedly (count phil-names) (partial atom nil)))
+     :parameters params
+     :phil-names phil-names
+     :phil-count (count phil-names)
+     :food-bowl  (ref (if-let [f (:food-amount params)]
+                        (repeatedly f (partial random-from-range (:eat-range params)))
+                        (repeatedly (partial random-from-range (:eat-range params)))))
+     :forks      forks
+     :agents     (connect-agents (vec (map (agent (initial-agent-state % forks)) (count phil-names))))
      }
     ))
 
 (defn start-fn [sys]
   (clear-screen)
-  (assoc sys :phils (vec (map #(future (run-phil %1)) (range (count (:phil-names sys)))))))
+  (assoc sys :phils (vec (map #(future (run-phil sys/system %1)) (range (count (:phil-names sys)))))))
 
 (defn clean-fn [sys]
-  (doseq [phil (:phils sys)] (try @phil (catch CancellationException e)))
+
   )
 
 (defn stop-fn [sys]
