@@ -63,7 +63,7 @@
         phil-count (count phil-names)
         base-params {:food-amount 10 :eat-range [10000 2000] :think-range [10000 2000]}
         params (merge base-params p)
-        forks (vec (map #(atom (initialized-fork %)) (range phil-count)))]
+        forks (mapv #(atom (initialized-fork %)) (range phil-count))]
     {
      :parameters params
      :phil-names phil-names
@@ -72,7 +72,7 @@
                         (repeatedly f (partial random-from-range (:eat-range params)))
                         (repeatedly (partial random-from-range (:eat-range params)))))
      :forks      forks
-     :agents     (connect-agents (vec (map-indexed #(agent (initial-agent-state %1 %2 forks)) phil-names)))
+     :agents     (connect-agents (map-indexed #(agent (initial-agent-state %1 %2 forks)) phil-names))
      }
     ))
 
@@ -87,7 +87,10 @@
   )
 
 (defn stop-fn [sys]
-  (doseq [phil (:agents sys)] (send phil done))
+  (doseq [phil (:agents sys)]
+    (send-message phil done)
+    (await phil))
+  sys
   )
 
 (defn init

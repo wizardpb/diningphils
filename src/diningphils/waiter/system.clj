@@ -64,9 +64,7 @@
   (Thread/sleep 500)
   (let [cnt (count (:phil-names sys))]
     (-> sys
-     (assoc :phils (vec (map #(future (run-phil sys %1 %1 %2))
-                          (range cnt)
-                          (take cnt (rest (cycle (range 5)))))))
+     (assoc :phils (mapv #(future (run-phil sys %1 %1 %2)) (range cnt) (take cnt (rest (cycle (range 5))))))
      (assoc :waiter (future (run-waiter sys))))))
 
 (defn stop-waiter [sys]

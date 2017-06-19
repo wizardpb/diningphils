@@ -85,7 +85,7 @@
 ;; Status and control functions
 (def cmd-channels
   "A vector of channels on which to receive control commands - one for each philosopher thread"
-  (vec (map (fn [i] (async/chan 1)) (range phil-count))))
+  (mapv (fn [i] (async/chan 1)) (range phil-count)))
 
 (defn send-command
   "Send a command to philosopher phil-id"
@@ -150,14 +150,14 @@
 
 (def forks
   "A vector of atoms representing each fork - it's current holder and dirty state"
-  (vec (map
-         #(atom
-           (if (zero? %)
-             ;; All forks are dirty
-             ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
-             ;; otherwise the fork is owned by the same phil-id
-             {:owner max-phil-id :dirty? true}
-             {:owner % :dirty? true})) (range phil-count))))
+  (mapv
+    #(atom
+       (if (zero? %)
+         ;; All forks are dirty
+         ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
+         ;; otherwise the fork is owned by the same phil-id
+         {:owner max-phil-id :dirty? true}
+         {:owner % :dirty? true})) (range phil-count)))
 
 (defn nth-fork
   [fork-id]
@@ -177,14 +177,14 @@
 ;; Initialization
 (defn initialize-forks []
   (alter-var-root #'forks
-    (fn [_] (vec (map
-            #(atom
-               (if (zero? %)
-                 ;; All forks are dirty
-                 ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
-                 ;; otherwise the fork is owned by the same phil-id
-                 {:owner max-phil-id :dirty? true}
-                 {:owner % :dirty? true})) (range phil-count))))))
+    (fn [_] (mapv
+              #(atom
+                 (if (zero? %)
+                   ;; All forks are dirty
+                   ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
+                   ;; otherwise the fork is owned by the same phil-id
+                   {:owner max-phil-id :dirty? true}
+                   {:owner % :dirty? true})) (range phil-count)))))
 
 (defn initial-request-flags-for
   [phil-id]

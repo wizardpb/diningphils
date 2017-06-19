@@ -125,7 +125,8 @@
   (let [line-offset 3]
     (show-line 1 "food left:" (food-left))
     (show-line (+ *phil-id* line-offset)
-      (str *phil-name* ": " (name (:state state)) ", owns") (str (forks-owned) (forks-requested state)))))
+      (str *phil-name* ": " (name (:state state)) ", owns") (str (forks-owned) (forks-requested state))))
+  state)
 
 ;; Message functions
 
@@ -160,17 +161,18 @@
     (assoc :state :eating)))
 
 (defn done [state]
-  (if-let [delay (:delay state)]
-    (future-cancel delay)
-    (dissoc state :delay))
-  (assoc state :state :done))
+  (if-let [delay (:delay state)] (future-cancel delay))
+  (-> state
+    (dissoc :delay)
+    (assoc :state :done)
+    (show-state)))
 
 (defn fork-state-change [[state-already-changed state] side-index]
   (let [
         neighbor (nth *neighbors* side-index)
         fork (nth *forks* side-index)
         has-request-flag (has-request? state fork)
-        request-fork? (and (not (done? state)) (hungry? state) has-request-flag (not (has-fork? fork)))
+        request-fork? (and (hungry? state) has-request-flag (not (has-fork? fork)))
         send-fork? (and (not (eating? state)) has-request-flag (has-fork? fork) (dirty? fork))]
     (debug-thread "check state, fork=" (:id @fork) " request-fork?=" request-fork? " send-fork?=" send-fork?)
     (let [new-state (cond

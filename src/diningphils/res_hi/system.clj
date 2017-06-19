@@ -56,7 +56,7 @@
 
 (defn start-fn [sys]
   (clear-screen)
-  (assoc sys :phils (vec (map #(future (run-phil %1)) (range (count (:phil-names sys)))))))
+  (assoc sys :phils (mapv #(future (run-phil %1)) (range (count (:phil-names sys))))))
 
 (defn clean-fn [sys]
   (doseq [phil (:phils sys)] (try @phil (catch CancellationException e)))

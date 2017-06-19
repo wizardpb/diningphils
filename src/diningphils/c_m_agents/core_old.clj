@@ -110,14 +110,14 @@
 
 (def forks
   "A vector of atoms representing each fork - it's current holder and dirty state"
-  (vec (map
-         #(atom
-           (if (zero? %)
-             ;; All forks are dirty
-             ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
-             ;; otherwise the fork is owned by the same phil-id
-             {:owner max-phil-id :dirty? true}
-             {:owner % :dirty? true})) (range phil-count))))
+  (mapv
+    #(atom
+       (if (zero? %)
+         ;; All forks are dirty
+         ;; Both fork(0) and fork(max-phil-id) are owned by philosopher(max-phil-id),
+         ;; otherwise the fork is owned by the same phil-id
+         {:owner max-phil-id :dirty? true}
+         {:owner % :dirty? true})) (range phil-count)))
 
 (defn nth-fork
   [fork-id]
