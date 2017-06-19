@@ -1,6 +1,7 @@
 (ns diningphils.c-m-agents.core
   (:require [diningphils.utils :refer :all]
-            [diningphils.system :as sys]))
+            [diningphils.system :as sys]
+            [clojure.string :as str]))
 
 (defn initialized-fork
   "Return the initial state of fork fork-id. Forks are numbered such that for philosopher p,
@@ -12,9 +13,9 @@
   [fork-id]
   (->
     (condp = fork-id
-      0 {:owner 0}
-      1 {:owner 0}
-      {:owner fork-id})
+      0 {:owner 0 :id 0}
+      1 {:owner 0 :id 1}
+      {:owner fork-id :id fork-id})
     (assoc :dirty? true))
   )
 
@@ -32,8 +33,10 @@
 (defn initial-agent-state
   "Return the initialized state for philosopher phil-id. This includes the phil-id, forks and request flags for it's
   shared forks. It's neighbors will be added after all agents are created"
-  [phil-id forks]
+  [phil-id phil-name forks]
   {:phil-id phil-id
+   :phil-name phil-name
+   :state :done
    :forks [(nth forks phil-id) (nth forks (mod (inc phil-id) (count forks)))]
    :request-flags (request-flags-for phil-id)}
   )
@@ -43,77 +46,189 @@
     (Thread/sleep ms)
     (fn)))
 
+(defn food-left []
+  (if (get-in sys/system [:parameters :food-amount])
+    (count @(:food-bowl sys/system))
+    "unlimited"))
+
+(defn get-food []
+  (dosync
+    (let [fb (:food-bowl sys/system)
+          food (first @fb)]
+      (alter fb rest)
+      food)))
+
 ;; Root bindings for all read-only philosopher thread-local state
 (def ^:dynamic *state* nil)               ;; The complete agent state
 (def ^:dynamic *phil-name* nil)           ;; Philosopher name
 (def ^:dynamic *phil-id* nil)             ;; Philosopher ID - an integer 0 - max-phil-id
-(def ^:dynamic *phil-count* nil)
 (def ^:dynamic *forks* nil)               ;; Shared forks
 (def ^:dynamic *neighbors* nil)           ;; Neighboring philosophers (agents)
+
+(defn debug-thread [& args]
+  (apply debug-pr *phil-name* *phil-id* args) (flush))
 
 (defn neighbor-index
   "Local fork state for an agent is indexed by 0 for the left resource and 1 for the right. This returns the
   correct index for a fork identified by id"
   [fork-id]
-  (mod (- fork-id *phil-id*) *phil-count*))
+  (let [i (mod (- fork-id *phil-id*) (:phil-count sys/system))]
+    (assert (#{0 1} i))
+    i))
 
-(defn fork-for [fork-id]
-  (nth *forks* (neighbor-index fork-id)))
+(defn has-fork? [fork]
+  (= *phil-id* (:owner @fork)))
 
-(defn neighbor-sharing [fork-id]
-  (nth *neighbors* (neighbor-index fork-id)))
+(defn has-fork [fork flag]
+  (swap! fork #(assoc % :owner (if flag *phil-id*))))
 
-(defn has-fork? [fork-id]
-  (= *phil-id* (:owner @(fork-for fork-id))))
+(defn dirty? [fork]
+  (:dirty? @fork))
 
-(defn dirty? [fork-id]
-  (:dirty? @(fork-for fork-id)))
+(defn dirty [fork value]
+  (swap! fork #(assoc % :dirty? value)))
 
-(defn has-request? [state fork-id]
-  (nth (:request-flags state) (neighbor-index fork-id)))
+(defn has-request? [state fork]
+  (nth (:request-flags state) (neighbor-index (:id @fork))))
 
-(defn fork-dirty [fork-id value]
-  (swap! (fork-for fork-id) #(assoc % :dirty? value)))
-
-(defn fork-request [state fork-id value]
-  (assoc state :request-flags #(assoc % (neighbor-index fork-id) value)))
-
-(defn fork-state-change [[continue state] fork-id]
+(defn has-request [state fork value]
+  (update-in state [:request-flags (neighbor-index (:id @fork))] (constantly value))
   )
 
-(defn start-eating? [[continue state]]
+(defn hungry? [state]
+  (= :hungry (:state state)))
+
+(defn eating? [state]
+  (= :eating (:state state)))
+
+(defn done? [state]
+  (= :done (:state state)))
+
+;; State display
+
+(defn forks-owned []
+  (let [owned (map #(:id @%) (filter has-fork? *forks*))
+        prefix (if (= 1 (count owned)) "fork" "forks")]
+    (if (empty? owned)
+      "no forks"
+      (str prefix " " (str/join " and " (doall (map str owned)))))))
+
+(defn forks-requested [state]
+  (let [requested (map #(:id @%) (filter #(has-request? state %) *forks*))
+        prefix (if (= 1 (count requested)) ", fork " ", forks ")]
+    (if (empty? requested)
+      ""
+      (str prefix (str/join " and " (doall (map str requested))) " requested")))
   )
+
+(defn show-state [state]
+  (let [line-offset 3]
+    (show-line 1 "food left:" (food-left))
+    (show-line (+ *phil-id* line-offset)
+      (str *phil-name* ": " (name (:state state)) ", owns") (str (forks-owned) (forks-requested state)))))
+
+;; Message functions
+
+(declare send-message)
+
+(defn request-fork [state fork]
+  (debug-thread "requests" fork)
+  (has-request state fork true))
+
+(defn recv-fork [state fork]
+  (assert (not (dirty? fork)))
+  (debug-thread "receives" fork)
+  (has-fork fork true)
+  state)
+
+(defn hungry [state]
+  (-> state
+    (dissoc :delay)
+    (assoc :state :hungry)))
+
+(defn think [state]
+  (-> state
+    (assoc :delay (delay-for
+                    (random-from-range (sys/get-parameter :think-range))
+                    #(send-message *agent* hungry)))
+    (assoc :state :thinking)))
+
+(defn eat [state ms]
+  (doseq [f *forks*] (dirty f true))
+  (-> state
+    (assoc :delay (delay-for ms #(send-message *agent* think)))
+    (assoc :state :eating)))
+
+(defn done [state]
+  (if-let [delay (:delay state)]
+    (future-cancel delay)
+    (dissoc state :delay))
+  (assoc state :state :done))
+
+(defn fork-state-change [[state-already-changed state] side-index]
+  (let [
+        neighbor (nth *neighbors* side-index)
+        fork (nth *forks* side-index)
+        has-request-flag (has-request? state fork)
+        request-fork? (and (not (done? state)) (hungry? state) has-request-flag (not (has-fork? fork)))
+        send-fork? (and (not (eating? state)) has-request-flag (has-fork? fork) (dirty? fork))]
+    (debug-thread "check state, fork=" (:id @fork) " request-fork?=" request-fork? " send-fork?=" send-fork?)
+    (let [new-state (cond
+                      ;; I'm hungry, don't have a fork and can request one
+                      request-fork?
+                      (do
+                        (debug-thread "requests fork " (:id @fork))
+                        (let [s (has-request state fork false)]
+                          (send-message neighbor request-fork fork)
+                          s))
+                      ;; I'm not eating and someone wants a dirty fork
+                      send-fork?
+                      (do
+                        (debug-thread "sends fork " (:id @fork))
+                        (assert (has-fork? fork))
+                        (dirty fork false)
+                        (has-fork fork false)
+                        (send-message neighbor recv-fork fork)
+                        state)
+                      :else state)]
+      [(or request-fork? send-fork? state-already-changed) new-state])))
+
+(defn start-eating? [[state-already-changed state]]
+  (let [start-eating? (and (hungry? state) (has-fork? (first *forks*)) (has-fork? (last *forks*)))]
+    (debug-thread "check state: start-eating?=" start-eating?)
+    (let [new-state
+          (if start-eating?
+            (if-let [food (get-food)]
+              (eat state food)
+              (done state))
+            state)]
+      (show-state new-state)
+      [state-already-changed new-state])))
 
 (defn state-change [state]
-  (-> [false state]
-    (fork-state-change 0)
-    (fork-state-change 1)
-    (start-eating?)))
+  ;; loop over the state machine until it tells us not to continue
+  ;; Finally return the new state
+  (loop [current-state state]
+    (let [[continue next-state]
+          (-> [false current-state]
+            (fork-state-change 0)
+            (fork-state-change 1)
+            (start-eating?))]
+      (if continue
+        (recur next-state)
+        next-state))))
 
 (defn execute-message [state fn args]
   (binding [*phil-id* (:phil-id state)
             *phil-name* (:phil-name state)
-            *phil-count* (:phil-count state)
             *forks* (:forks state)
             *neighbors* (:neighbors state)]
-    (loop [[changed state] (state-change (apply fn state args))]
-      (if changed
-        (recur (state-change state))
-        state))))
+    (debug-thread "Executing " (fn-name fn) " " args " with " state)
+    (state-change (apply fn state args))))
 
 (defn send-message [agent fn & args]
-  (apply send-off execute-message fn args))
-
-(defn hungry [state]
-  (state-change (assoc state :state :hungry)))
-
-(defn think [state]
-  (state-change (assoc state :state :thinking))
-  (delay-for (random-from-range (sys/get-parameter :think-range)) #(hungry state)))
-
-(defn eat [state ms]
-  (state-change (assoc state :state :eating))
-  (delay-for ms #(think state)))
+  (debug-pr (:phil-name @agent) (:phil-id @agent) "Sending " (fn-name fn) args "to" (:phil-id @agent))
+  (send-off agent execute-message fn (if args args [])))
 
 (defn run-phil [sys phil-id]
   (Thread/sleep (random-from-range [1 10]))

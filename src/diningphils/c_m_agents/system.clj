@@ -39,41 +39,55 @@
         [diningphils.c-m-agents.core])
   )
 
+(defn connect [state agents]
+  (let [n (count agents)
+        id (:phil-id state )
+        left (nth agents (mod (dec id) n))
+        right (nth agents (mod (inc id) n))]
+    (assoc state :neighbors [left right])
+    ;state
+    ))
+
 (defn connect-agents [agents]
-  (letfn [(connect [id a]
-            (let [n (count agents)
-                  left (nth agents (mod (dec id) n))
-                  right (nth agents (mod (inc id) n))]
-              (assoc a :neighbors [left right])))]
-    (map-indexed connect agents)))
+  (doseq [a agents]
+    (set-error-handler! a (fn [a e]
+                            (log "Philosopher " (:phil-id @a) " throws " e)
+                            (.printStackTrace e)))
+    (set-error-mode! a :continue)
+    (send a connect agents))
+  (apply await-for 1000 agents)
+  agents)
 
 (defn init-fn [p]
   (let [phil-names ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"]
+        phil-count (count phil-names)
         base-params {:food-amount 10 :eat-range [10000 2000] :think-range [10000 2000]}
         params (merge base-params p)
-        forks (vec (map #(atom (initialized-fork %)) (count phil-names)))]
+        forks (vec (map #(atom (initialized-fork %)) (range phil-count)))]
     {
      :parameters params
      :phil-names phil-names
-     :phil-count (count phil-names)
+     :phil-count phil-count
      :food-bowl  (ref (if-let [f (:food-amount params)]
                         (repeatedly f (partial random-from-range (:eat-range params)))
                         (repeatedly (partial random-from-range (:eat-range params)))))
      :forks      forks
-     :agents     (connect-agents (vec (map (agent (initial-agent-state % forks)) (count phil-names))))
+     :agents     (connect-agents (vec (map-indexed #(agent (initial-agent-state %1 %2 forks)) phil-names)))
      }
     ))
 
 (defn start-fn [sys]
   (clear-screen)
-  (assoc sys :phils (vec (map #(future (run-phil sys/system %1)) (range (count (:phil-names sys)))))))
+  (doseq [phil (range (count (:phil-names sys)))] (run-phil sys/system phil))
+  sys)
 
 (defn clean-fn [sys]
-
+  (while (not (every? #(= :done %) (map #(:state (deref %)) (:agents sys/system))))
+    (Thread/sleep 1000))
   )
 
 (defn stop-fn [sys]
-  (doseq [pf (:phils sys)] (future-cancel pf))
+  (doseq [phil (:agents sys)] (send phil done))
   )
 
 (defn init
