@@ -72,7 +72,7 @@
                         (repeatedly f (partial random-from-range (:eat-range params)))
                         (repeatedly (partial random-from-range (:eat-range params)))))
      :forks      forks
-     :agents     (connect-agents (map-indexed #(agent (initial-agent-state %1 %2 forks)) phil-names))
+     :phils      (connect-agents (map-indexed #(agent (initial-agent-state %1 %2 forks)) phil-names))
      }
     ))
 
@@ -82,12 +82,12 @@
   sys)
 
 (defn clean-fn [sys]
-  (while (not (every? #(= :done %) (map #(:state (deref %)) (:agents sys/system))))
+  (while (not (every? #(= :done %) (map #(:state (deref %)) (:phils  sys/system))))
     (Thread/sleep 1000))
   )
 
 (defn stop-fn [sys]
-  (doseq [phil (:agents sys)]
+  (doseq [phil (:phils  sys)]
     (send-message phil done)
     (await phil))
   sys

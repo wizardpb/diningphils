@@ -173,7 +173,7 @@
         fork (nth *forks* side-index)
         has-request-flag (has-request? state fork)
         request-fork? (and (hungry? state) has-request-flag (not (has-fork? fork)))
-        send-fork? (and (not (eating? state)) has-request-flag (has-fork? fork) (dirty? fork))]
+        send-fork? (and (not (eating? state)) has-request-flag (has-fork? fork) (or (done? state) (dirty? fork)))]
     (debug-thread "check state, fork=" (:id @fork) " request-fork?=" request-fork? " send-fork?=" send-fork?)
     (let [new-state (cond
                       ;; I'm hungry, don't have a fork and can request one
@@ -234,4 +234,4 @@
 
 (defn run-phil [sys phil-id]
   (Thread/sleep (random-from-range [1 10]))
-  (send-message (nth (:agents sys) phil-id) hungry))
+  (send-message (nth (:phils  sys) phil-id) think))
