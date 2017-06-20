@@ -1,5 +1,8 @@
 ;;
-;; Copyright 2017 Prajna Inc.
+;; Dining philosophers solution using Chandy-Misra algorithm
+;; https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
+;;
+;; Copyright 2015 Prajna Inc.
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -13,24 +16,42 @@
 ;; See the License for the specific language governing permissions and
 ;; limitations under the License.
 ;;
-;; Edsger Dijkstra's famous dining philosophers problem, solved using the resource hierarchy algorithm and Clojure's STM
+;; Edsger Dijkstra's famous dining philosophers problem, solved using the using Chandy-Misra algorithm and Clojure
+;; agents
 ;;
-;; Each philosopher is represented as a thread and a set of per-thread local vars. The thread repeatedly takes
-;; forks, eats, frees forks and  thinks until all the food is gone. The vars holds the philosopher identity and
-;; the forks to the left and right of the philosopher
+;; See the Chandry-Misra paper (C-M) at https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
 ;;
-;; A global system map hold all the forks as vector indexed by an integer ID, run-time parameters and a food bowl
-;; from which the philosopers grab food to eat. This is represented as a fixed or infinite sequence of random
-;; integers representing the eat time in mS. Think time is also generated as random integers. Both are drawn from
-;; a range defined by a system parameter.
+;; Philosphers are represented as agents, which hold the philospher state.
 ;;
-;; Deadlock is avoided using the 'lowest fork first'/resource hierarchy approach
+;; Each is a state machine which implements the main C-M guarded command. State changes are driven by message sends
+;; from ajoining philosophers. When a philosopher gets hungry, it requests the forks it doesn't have, then begins
+;; eating when they arrive. After a while, it becomes sated, and goes back to thinking until it becomes hungry again.
+;;
+;; Messages between philosophers (agents) are implemented as agent sends (and sent using send-off because of state
+;; monitoring). To save having to pass a new state map around between various functions that access and manipulate it,
+;; message execution is wrapped by a function (execute-message) that places the current state into thread-local vars.
+;; This includes the var *state*, which holds the new state to be set on message completion. Any function that
+;; updates the state places the new state map into this var, which is finally returned as the new state for the agent.
+;;
+;; For brevity, other read-only values from the agent state (such as the id's of adjoining philosopher agents,
+;; needed for message sending) are also placed into thread-local vars.
+;;
+;; 'execute-message' also takes care of calling the main state machine function (state-changed). This implements
+;; the C-M guarded command as described above.
+;;
+;; The forks themselves are represented explicitly by a vector of atoms holding the state of each fork. This
+;; indicates whether it is dirty or not. It also includes who is currently using it, which is solely for monitoring
+;; purposes. Note that we do not need transactional semantics on the fork state update, because the message sequencing
+;; of the C-M algorith ensures that only one philosopher will ever try to update the state at any time.
+;;
+;; There is a fixed amount of food, and this goes on until all the food is gone. When a philosopher
+;; goes hungry and there is no food left it rests. The system is done when all philosophers are resting.
 ;;
 ;; To run with status display, evaluate:
 ;;
 ;; (go)
 ;;
-;; from the diningphils.res-hi.system namespace. Hitting any key will stop the simulation.
+;; It can be stopped at any time by pressing any key
 ;;
 
 (ns diningphils.c-m-agents.system
