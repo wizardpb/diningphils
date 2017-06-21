@@ -133,12 +133,12 @@
 (declare send-message)
 
 (defn request-fork [state fork]
-  (debug-thread "requests" fork)
+  (debug-thread "fork " (:id @fork) "requested, dirty=" (dirty? fork))
   (has-request state fork true))
 
 (defn recv-fork [state fork]
   (assert (not (dirty? fork)))
-  (debug-thread "receives" fork)
+  (debug-thread "receives fork " (:id @fork) ", dirty=" (dirty? fork) )
   (has-fork fork true)
   state)
 
@@ -174,19 +174,19 @@
         has-request-flag (has-request? state fork)
         request-fork? (and (hungry? state) has-request-flag (not (has-fork? fork)))
         send-fork? (and (not (eating? state)) has-request-flag (has-fork? fork) (or (done? state) (dirty? fork)))]
-    (debug-thread "check state, fork=" (:id @fork) " request-fork?=" request-fork? " send-fork?=" send-fork?)
+    (debug-thread "check state, fork=" (:id @fork) "request-fork?=" request-fork? "send-fork?=" send-fork?)
     (let [new-state (cond
                       ;; I'm hungry, don't have a fork and can request one
                       request-fork?
                       (do
-                        (debug-thread "requests fork " (:id @fork))
+                        (debug-thread "requests fork" (:id @fork))
                         (let [s (has-request state fork false)]
                           (send-message neighbor request-fork fork)
                           s))
                       ;; I'm not eating and someone wants a dirty fork
                       send-fork?
                       (do
-                        (debug-thread "sends fork " (:id @fork))
+                        (debug-thread "sends fork" (:id @fork))
                         (assert (has-fork? fork))
                         (dirty fork false)
                         (has-fork fork false)
@@ -225,11 +225,11 @@
             *phil-name* (:phil-name state)
             *forks* (:forks state)
             *neighbors* (:neighbors state)]
-    (debug-thread "Executing " (fn-name fn) " " args " with " state)
+    (debug-thread "Executing" (fn-name fn) args ", state" (:state state))
     (state-change (apply fn state args))))
 
 (defn send-message [agent fn & args]
-  (debug-pr (:phil-name @agent) (:phil-id @agent) "Sending " (fn-name fn) args "to" (:phil-id @agent))
+  (debug-pr (:phil-name @agent) (:phil-id @agent) "Sending" (fn-name fn) args "to" (:phil-id @agent))
   (send-off agent execute-message fn (if args args [])))
 
 (defn run-phil [sys phil-id]

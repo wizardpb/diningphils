@@ -50,13 +50,14 @@
         stop-ch (if (System/getProperty "nostop")
                   (a/chan 1)                         ;Dummy chan to stub out stop - just for running under IntelliJ
                   (a/thread
-                   (show-line (+ (count phils) 6) "Press return to stop")
-                   (read-line)
-                   (stop stop-fn)
-                   "Stopped"))
+                    (show-line (+ (count phils) 6) "Press return to stop")
+                    (read-line)
+                    (stop stop-fn)
+                    "Stopped"))
         [val _] (a/alts!! [end-ch stop-ch])
         ;[val _] (a/alts!! [end-ch])
         ]
+    (a/close! end-ch) (a/close! stop-ch)
     (show-line (+ (count phils) 6) val "\n")
     'Done))
 

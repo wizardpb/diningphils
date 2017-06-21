@@ -51,7 +51,7 @@
 (defn clear-screen [] (print "\033[2J"))
 
 (defn show-line [n & args]
-  (apply log (line-escape n) args)
+  (apply log (if (debugging?) "" (line-escape n)) args)
   (flush))
 
 (defn debug-pr
