@@ -10,8 +10,8 @@
      diningphils.c-m-async.system
      diningphils.utils))
 
-(set-debug (range 5))
-(alter-var-root #'*print-level* (constantly 10))
+;(set-debug (range 5))
+(alter-var-root #'*print-level* (constantly 5))
 
 
 

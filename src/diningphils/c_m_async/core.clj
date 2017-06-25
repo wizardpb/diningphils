@@ -178,7 +178,11 @@
         has-request-flag (has-request? state fork)
         request-fork? (and (hungry? state) has-request-flag (not (has-fork? fork)))
         send-fork? (and (not (eating? state)) has-request-flag (has-fork? fork) (or (done? state) (dirty? fork)))]
-    (debug-thread "check state, fork=" (:id @fork) "request-fork?=" request-fork? "send-fork?=" send-fork?)
+    (debug-thread "check state, fork=" (:id @fork) (if (dirty? fork) "dirty" "clean")
+      "state=" (:state state)
+      "request-fork?="
+      request-fork?
+      "send-fork?=" send-fork?)
     (let [new-state (cond
                       ;; I'm hungry, don't have a fork and can request one
                       request-fork?
@@ -209,7 +213,8 @@
               (done state))
             state)]
       (show-state new-state)
-      [state-already-changed new-state])))
+      ;; Return true if we transitioned to done so as to get a chance to service any final fork requests
+      [(or (and (not (done? state)) (done? new-state)) state-already-changed) new-state])))
 
 (defn state-change [state]
   ;; loop over the state machine until it tells us not to continue
@@ -229,7 +234,7 @@
             *phil-name* (:phil-name state)
             *forks* (:forks state)
             *neighbors* (:neighbors state)]
-    (debug-thread "Executing" (fn-name fn) args ", state" (:state state))
+    (debug-thread "Executing" (fn-name fn) ", state" (:state state))
     (state-change (apply fn state args))))
 
 (defn send-message [phil-chans fn & args]
@@ -244,14 +249,12 @@
 
 (defn run-phil [state-atom]
   (future
-    (Thread/sleep (random-from-range [1 10]))
     (loop [state (execute-message @state-atom think '())]
       (debug-pr (:phil-id state) (:phil-name state) "Reading...")
       (let [chans (conj (mapv :from (:neighbors state)) (->> state :self :from))
             [[fn & args] port] (a/alts!! chans)
             ]
         (when-not (= fn :stop)
-          (debug-thread "Executing" (fn-name fn) args ", state" (:state state))
           (swap! state-atom #(execute-message %1 fn args))
           (recur @state-atom))))
     ))

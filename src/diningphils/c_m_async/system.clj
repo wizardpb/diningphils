@@ -42,16 +42,18 @@
   (let [phil-states (:phil-states sys)]
     (assoc sys :phils (mapv #(run-phil %) phil-states))))
 
+(defn monitor [sys]
+  (let [states (:phil-states sys)]
+    (while (not (every? #(= :done (:state (deref %))) states))
+      (Thread/sleep 1000))
+    (doseq [state-atom states]
+      (a/>!! (->> @state-atom :self :to) [:stop]))))
+
 (defn clean-fn [sys]
-  (let [monitor (future
-                  (let [states (:phil-states sys)]
-                    (while (not (every? #(= :done (:state (deref %))) states))
-                      (Thread/sleep 1000))
-                    (doseq [state-atom states]
-                      (a/>!! (->> @state-atom :self :to) :stop))))
-        ]
+  (let [mf (future-call #(monitor sys))]
     (doseq [phil (:phils sys)]
-      (try (deref phil) (catch CancellationException e)))))
+      (try (deref phil) (catch CancellationException e)))
+    @mf))
 
 (defn stop-fn [sys]
   (doseq [phil (:phils sys)]
@@ -65,6 +67,9 @@
 
 (defn start []
   (sys/start start-fn))
+
+(defn stop []
+  (sys/stop stop-fn))
 
 (defn go
   ([p]

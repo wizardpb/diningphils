@@ -59,7 +59,7 @@
         ]
     (a/close! end-ch) (a/close! stop-ch)
     (show-line (+ (count phils) 6) val "\n")
-    'Done))
+    "Done\n"))
 
 (defn get-parameter [param]
   (get-in system [:parameters param]))
