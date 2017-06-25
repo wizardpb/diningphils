@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f934fb6-f015-42cf-bada-b20987d09460" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/deps.clj" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/user.clj" afterPath="$PROJECT_DIR$/dev/user.clj" />
     </list>
     <list id="e38d1214-553a-4bde-901c-ef3f4030d999" name="Ignore" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/target/stale/extract-native.dependencies" afterPath="" />
@@ -41,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/system.clj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="69">
@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.clj" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.clj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/user.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="300">
+              <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="915">
               <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
               <folding />
             </state>
@@ -94,7 +94,7 @@
       <file leaf-file-name="utils.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
+            <state relative-caret-position="950">
               <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
               <folding />
             </state>
@@ -297,8 +297,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m_async/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m_async/system.clj" />
-        <option value="$PROJECT_DIR$/dev/user.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/system.clj" />
+        <option value="$PROJECT_DIR$/dev/user.clj" />
       </list>
     </option>
   </component>
@@ -517,7 +517,7 @@
       <recent name="$PROJECT_DIR$/src/diningphils/waiter" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1498428103081">{:repl-history {:ide [], :local [{:command &quot;(update-in {:a [0 1 2]} [:a 4] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 3] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(print :a)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(log \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 2 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;) (await logger)&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(map agent-error (:agents sys/system))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(map :state (:agents sys/system))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(log \&quot;test\&quot;)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(set-debug #{1})&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;Name\&quot; 1 \&quot;line\&quot;)&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (thread-debug \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (debug-thread \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;debug-phils&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;hungry&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(fn-name hungry)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(shutdown-agents)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(init) (run-phil sys/system 0)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(send)&quot;, :offset 6} {:command &quot;(init) (run-phil sys/system 1)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(mod 5 0)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(init)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;system&quot;, :offset 6, :ns &quot;diningphils.system&quot;} {:command &quot;(some even? [1 2 3 4 5])&quot;, :offset 22, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot;])&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot; \&quot;2\&quot;])&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vector %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;sys/system&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(pprint sys/system)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(pprint (:phils sys/system))&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(pprint (map :state (:phils sys/system)))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(pprint (map #(:state @%) (:phils sys/system)))&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(set-debug (range 5))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(.indexOf (fn-name recv-fork) \\$)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(.indexOf (fn-name recv-fork) \&quot;$\&quot;)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(split-at (.indexOf (fn-name recv-fork) \&quot;$\&quot;) (fn-name recv-fork))&quot;, :offset 63, :ns &quot;user&quot;} {:command &quot;(subs  (fn-name recv-fork) (.indexOf (fn-name recv-fork) \&quot;$\&quot;))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(subs  (fn-name recv-fork) (inc (.indexOf (fn-name recv-fork) \&quot;$\&quot;)))&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(symbol (subs (fn-name recv-fork) (inc (.indexOf (fn-name recv-fork) \&quot;$\&quot;))))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(fn-name recv-fork)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(conj (symbol (fn-name recv-fork)) '())&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(cons (symbol (fn-name recv-fork)) '())&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(var 'recv-fork)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(var recv-fork)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(def s recv-fork)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(def s 'recv-fork)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;s&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(var s)&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(def f (future (pprint (a/&lt;!! c))))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;recv-fork&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c recv-fork)&quot;, :offset 3, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c (list println \&quot;Hello\&quot;))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(cons println '(\&quot;Hello\&quot;))&quot;, :offset 0, :ns &quot;user&quot;} {:command &quot;(def f (future (let [f (a/&lt;!! c)] (apply (first f) (rest f)))))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c (cons println '(\&quot;Hello\&quot;)))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(use)&quot;, :offset 4, :ns &quot;diningphils.c-m-async.core&quot;} {:command &quot;(use-some-func \&quot;me\&quot;)&quot;, :offset 18, :ns &quot;diningphils.c-m-async.core&quot;} {:command &quot;(use-use)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;use-use&quot;, :offset 7, :ns &quot;diningphils.c-m-async.system&quot;} {:command &quot;go&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(random-from-range [1 10])&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(assoc [false] 0 true)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(assoc [] 5 true)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(assoc []1 true)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(assoc [] 0 true)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(def c (a/chan 1))&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(def f (future (println (a/&lt;!! c))))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c \&quot;Hey!\&quot;)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(def f (future (println (a/&lt;!! c)) \&quot;Done\&quot;))&quot;, :offset 43, :ns &quot;user&quot;} {:command &quot;(future-cancel f)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;@f&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(identical? c (last (a/alts!! [c])))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(def c (a/thread (Thread/sleep 1000) nil)) (a/alts!! [c])&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(def c (a/thread (Thread/sleep 1000))) (a/alts!! [c])&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1 2]} [:a 0] inc)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(dissoc 1 [1 2 3])&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;()&quot;, :offset 1} {:command &quot;(def c (a/thread (Thread/sleep 1000) \&quot;Done\&quot;)) (a/alts!! [c])&quot;, :offset 60, :ns &quot;user&quot;} {:command &quot;(a/alts!! [c])&quot;, :offset 0, :ns &quot;user&quot;} {:command &quot;(remove #(= 1 %) [0 1 2])&quot;, :offset 23, :ns &quot;user&quot;} {:command &quot;(vec (remove #(= 1 %) [0 1 2]))&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(go)&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(try (throw (UnsupportedOperationException.) (catch Exception e)))&quot;, :offset 66, :ns &quot;user&quot;} {:command &quot;(try (throw (UnsupportedOperationException.)) (catch Exception e))&quot;, :offset 45, :ns &quot;user&quot;} {:command &quot;(map :state (:phils sys/system))&quot;, :offset 12, :ns &quot;user&quot;} {:command &quot;(map #(:state @%) (:phil-states sys/system))&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(map #(vec (:phil-name @%) (:state @%)) (:phil-states sys/system))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(map deref (:forks sys/system))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(map #(vector (:phil-name @%) (:state @%) (:request-flags @%)) (:phil-states sys/system))&quot;, :offset 60, :ns &quot;user&quot;} {:command &quot;(sys/stop)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(sys/stop stop-fn)&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(stop)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(go {:food-amount 5})&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(go {:food-amount 1})&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(map #(vector (:phil-name @%) (:state @%)) (:phil-states sys/system))&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(doseq [sa (:phil-states sys/system)] (a/&gt;!! (-&gt;&gt; @sa :self :to) :stop))&quot;, :offset 71, :ns &quot;user&quot;} {:command &quot;(:phils sys/system)&quot;, :offset 8, :ns &quot;user&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1498428315952">{:repl-history {:ide [], :local [{:command &quot;(update-in {:a [0 1 2]} [:a 4] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 3] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(print :a)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(log \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 2 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;) (await logger)&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(map agent-error (:agents sys/system))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(map :state (:agents sys/system))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(log \&quot;test\&quot;)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(set-debug #{1})&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;Name\&quot; 1 \&quot;line\&quot;)&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (thread-debug \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (debug-thread \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;debug-phils&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;hungry&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(fn-name hungry)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(shutdown-agents)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(init) (run-phil sys/system 0)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(send)&quot;, :offset 6} {:command &quot;(init) (run-phil sys/system 1)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(mod 5 0)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(init)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;system&quot;, :offset 6, :ns &quot;diningphils.system&quot;} {:command &quot;(some even? [1 2 3 4 5])&quot;, :offset 22, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot;])&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot; \&quot;2\&quot;])&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vector %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;sys/system&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(pprint sys/system)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(pprint (:phils sys/system))&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(pprint (map :state (:phils sys/system)))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(pprint (map #(:state @%) (:phils sys/system)))&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(set-debug (range 5))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(.indexOf (fn-name recv-fork) \\$)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(.indexOf (fn-name recv-fork) \&quot;$\&quot;)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(split-at (.indexOf (fn-name recv-fork) \&quot;$\&quot;) (fn-name recv-fork))&quot;, :offset 63, :ns &quot;user&quot;} {:command &quot;(subs  (fn-name recv-fork) (.indexOf (fn-name recv-fork) \&quot;$\&quot;))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(subs  (fn-name recv-fork) (inc (.indexOf (fn-name recv-fork) \&quot;$\&quot;)))&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(symbol (subs (fn-name recv-fork) (inc (.indexOf (fn-name recv-fork) \&quot;$\&quot;))))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(fn-name recv-fork)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(conj (symbol (fn-name recv-fork)) '())&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(cons (symbol (fn-name recv-fork)) '())&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(var 'recv-fork)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(var recv-fork)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(def s recv-fork)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(def s 'recv-fork)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;s&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(var s)&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(def f (future (pprint (a/&lt;!! c))))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;recv-fork&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c recv-fork)&quot;, :offset 3, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c (list println \&quot;Hello\&quot;))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(cons println '(\&quot;Hello\&quot;))&quot;, :offset 0, :ns &quot;user&quot;} {:command &quot;(def f (future (let [f (a/&lt;!! c)] (apply (first f) (rest f)))))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c (cons println '(\&quot;Hello\&quot;)))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(use)&quot;, :offset 4, :ns &quot;diningphils.c-m-async.core&quot;} {:command &quot;(use-some-func \&quot;me\&quot;)&quot;, :offset 18, :ns &quot;diningphils.c-m-async.core&quot;} {:command &quot;(use-use)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;use-use&quot;, :offset 7, :ns &quot;diningphils.c-m-async.system&quot;} {:command &quot;go&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(random-from-range [1 10])&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(assoc [false] 0 true)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(assoc [] 5 true)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(assoc []1 true)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(assoc [] 0 true)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(def c (a/chan 1))&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(def f (future (println (a/&lt;!! c))))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c \&quot;Hey!\&quot;)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(def f (future (println (a/&lt;!! c)) \&quot;Done\&quot;))&quot;, :offset 43, :ns &quot;user&quot;} {:command &quot;(future-cancel f)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;@f&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(identical? c (last (a/alts!! [c])))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(def c (a/thread (Thread/sleep 1000) nil)) (a/alts!! [c])&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(def c (a/thread (Thread/sleep 1000))) (a/alts!! [c])&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1 2]} [:a 0] inc)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(dissoc 1 [1 2 3])&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;()&quot;, :offset 1} {:command &quot;(def c (a/thread (Thread/sleep 1000) \&quot;Done\&quot;)) (a/alts!! [c])&quot;, :offset 60, :ns &quot;user&quot;} {:command &quot;(a/alts!! [c])&quot;, :offset 0, :ns &quot;user&quot;} {:command &quot;(remove #(= 1 %) [0 1 2])&quot;, :offset 23, :ns &quot;user&quot;} {:command &quot;(vec (remove #(= 1 %) [0 1 2]))&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(go)&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(try (throw (UnsupportedOperationException.) (catch Exception e)))&quot;, :offset 66, :ns &quot;user&quot;} {:command &quot;(try (throw (UnsupportedOperationException.)) (catch Exception e))&quot;, :offset 45, :ns &quot;user&quot;} {:command &quot;(map :state (:phils sys/system))&quot;, :offset 12, :ns &quot;user&quot;} {:command &quot;(map #(:state @%) (:phil-states sys/system))&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(map #(vec (:phil-name @%) (:state @%)) (:phil-states sys/system))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(map deref (:forks sys/system))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(map #(vector (:phil-name @%) (:state @%) (:request-flags @%)) (:phil-states sys/system))&quot;, :offset 60, :ns &quot;user&quot;} {:command &quot;(sys/stop)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(sys/stop stop-fn)&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(stop)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(go {:food-amount 5})&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(go {:food-amount 1})&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(map #(vector (:phil-name @%) (:state @%)) (:phil-states sys/system))&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(doseq [sa (:phil-states sys/system)] (a/&gt;!! (-&gt;&gt; @sa :self :to) :stop))&quot;, :offset 71, :ns &quot;user&quot;} {:command &quot;(:phils sys/system)&quot;, :offset 8, :ns &quot;user&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -931,7 +931,8 @@
     <MESSAGE value="Deleted old core.clj" />
     <MESSAGE value="First working version of core async C-M" />
     <MESSAGE value="Fixed termination bug in c-m-async" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed termination bug in c-m-async" />
+    <MESSAGE value="Remove unused deps.clj" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unused deps.clj" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1136,14 +1137,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/io.clj" />
-    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.3.442/core.async-0.3.442.jar!/clojure/core/async.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3975">
@@ -1262,22 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/user.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/system.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -1290,6 +1267,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="14" lean-forward="true" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/user.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding />
         </state>
       </provider>
