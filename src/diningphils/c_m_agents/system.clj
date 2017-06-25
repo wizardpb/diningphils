@@ -60,24 +60,23 @@
         [diningphils.c-m-agents.core])
   )
 
-(defn connect [state agents]
-  (let [n (count agents)
+(defn connect [state phils]
+  (let [n (count phils)
         id (:phil-id state )
-        left (nth agents (mod (dec id) n))
-        right (nth agents (mod (inc id) n))]
+        left (nth phils (mod (dec id) n))
+        right (nth phils (mod (inc id) n))]
     (assoc state :neighbors [left right])
-    ;state
     ))
 
-(defn connect-agents [agents]
-  (doseq [a agents]
-    (set-error-handler! a (fn [a e]
+(defn connect-phils [phils]
+  (doseq [phil phils]
+    (set-error-handler! phil (fn [a e]
                             (log "Philosopher " (:phil-id @a) " throws " e)
                             (.printStackTrace e)))
-    (set-error-mode! a :continue)
-    (send a connect agents))
-  (apply await-for 1000 agents)
-  agents)
+    (set-error-mode! phil :continue)
+    (send phil connect phils))
+  (apply await-for 1000 phils)
+  phils)
 
 (defn init-fn [p]
   (let [phil-names ["Aristotle" "Kant" "Spinoza" "Marx" "Russell"]
@@ -93,7 +92,7 @@
                         (repeatedly f (partial random-from-range (:eat-range params)))
                         (repeatedly (partial random-from-range (:eat-range params)))))
      :forks      forks
-     :phils      (connect-agents (map-indexed #(agent (initial-agent-state %1 %2 forks)) phil-names))
+     :phils      (connect-phils (map-indexed #(agent (initial-phil-state %1 %2 forks)) phil-names))
      }
     ))
 

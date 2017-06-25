@@ -1,7 +1,8 @@
-(ns diningphils.c-m-agents.core
+(ns diningphils.c-m-async.core
   (:require [diningphils.utils :refer :all]
             [diningphils.system :as sys]
-            [clojure.string :as str]))
+            [clojure.string :as str]
+            [clojure.core.async :as a]))
 
 (defn initialized-fork
   "Return the initial state of fork fork-id. Forks are numbered such that for philosopher p,
@@ -32,13 +33,16 @@
 
 (defn initial-phil-state
   "Return the initialized state for philosopher phil-id. This includes the phil-id, forks and request flags for it's
-  shared forks. It's neighbors will be added after all agents are created"
+  shared forks. It's neighboring channels will be added after all philosophers are created"
   [phil-id phil-name forks]
-  {:phil-id phil-id
-   :phil-name phil-name
-   :state :done
-   :forks [(nth forks phil-id) (nth forks (mod (inc phil-id) (count forks)))]
-   :request-flags (request-flags-for phil-id)}
+  (let [self-chan (a/chan 1)]
+    {:phil-id       phil-id
+     :phil-name     phil-name
+     :state         :starting
+     :chans         {:to (a/chan 1) :from (a/chan 1)}                                   ; Channels that I communicate on
+     :self          {:from self-chan :to self-chan}                                     ; Channels I receive commands on
+     :forks         [(nth forks phil-id) (nth forks (mod (inc phil-id) (count forks)))] ;My forks
+     :request-flags (request-flags-for phil-id)})
   )
 
 (defn delay-for [ms fn]
@@ -151,13 +155,13 @@
   (-> state
     (assoc :delay (delay-for
                     (random-from-range (sys/get-parameter :think-range))
-                    #(send-message *agent* hungry)))
+                    #(send-message (:self state) hungry)))
     (assoc :state :thinking)))
 
 (defn eat [state ms]
   (doseq [f *forks*] (dirty f true))
   (-> state
-    (assoc :delay (delay-for ms #(send-message *agent* think)))
+    (assoc :delay (delay-for ms #(send-message (:self state) think)))
     (assoc :state :eating)))
 
 (defn done [state]
@@ -228,12 +232,26 @@
     (debug-thread "Executing" (fn-name fn) args ", state" (:state state))
     (state-change (apply fn state args))))
 
-(defn send-message [phil fn & args]
-  (debug-pr *phil-name* *phil-id* "Sending" (fn-name fn) args "to" (:phil-id @phil))
-  (send-off phil execute-message fn (if args args '())))
+(defn send-message [phil-chans fn & args]
+  (debug-pr *phil-name* *phil-id* "Sending" (fn-name fn) args "to"
+    (condp identical? phil-chans
+      (first *neighbors*) (dec *phil-id*)
+      (last *neighbors*) (inc *phil-id*)
+      "me"
+      )
+    )
+  (a/>!! (:to phil-chans) (cons fn args)))
 
-(defn run-phil [sys phil-id]
-  (Thread/sleep (random-from-range [1 10]))
-  (binding
-    [*phil-name* "Startup" *phil-id* nil]
-    (send-message (nth (:phils sys) phil-id) think)))
+(defn run-phil [state-atom]
+  (future
+    (Thread/sleep (random-from-range [1 10]))
+    (loop [state (execute-message @state-atom think '())]
+      (debug-pr (:phil-id state) (:phil-name state) "Reading...")
+      (let [chans (conj (mapv :from (:neighbors state)) (->> state :self :from))
+            [[fn & args] port] (a/alts!! chans)
+            ]
+        (when-not (= fn :stop)
+          (debug-thread "Executing" (fn-name fn) args ", state" (:state state))
+          (swap! state-atom #(execute-message %1 fn args))
+          (recur @state-atom))))
+    ))

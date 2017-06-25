@@ -6,12 +6,12 @@
              [clojure.pprint :as p]
              )
    (:use
-     diningphils.c-m-agents.core
-     diningphils.c-m-agents.system
+     diningphils.c-m-async.core
+     diningphils.c-m-async.system
      diningphils.utils))
 
-;(set-debug (range 5))
- (alter-var-root #'*print-level* (constantly 10))
+(set-debug (range 5))
+(alter-var-root #'*print-level* (constantly 10))
 
 
 

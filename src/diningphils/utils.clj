@@ -70,4 +70,5 @@
 
 (defn fn-name
   [fn]
-  (.getName (.getClass fn)))
+  (let [name (.getName (.getClass fn))]
+    (subs name (inc (.indexOf name "$")))))

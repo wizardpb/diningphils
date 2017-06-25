@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0f934fb6-f015-42cf-bada-b20987d09460" name="Default" comment="">
+    <list default="true" id="0f934fb6-f015-42cf-bada-b20987d09460" name="Default" comment="Deleted old core.clj">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/c_m_async/core.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/diningphils/c_m_async/system.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/diningphils/c_m_async/tests.clj" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/diningphils/c_m/core.clj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test/diningphills/c_m/tests.clj" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/user.clj" afterPath="$PROJECT_DIR$/dev/user.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/system.clj" afterPath="$PROJECT_DIR$/src/diningphils/system.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/c_m_agents/system.clj" afterPath="$PROJECT_DIR$/src/diningphils/c_m_agents/system.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/diningphils/utils.clj" afterPath="$PROJECT_DIR$/src/diningphils/utils.clj" />
+    </list>
+    <list id="e38d1214-553a-4bde-901c-ef3f4030d999" name="Ignore" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/stale/extract-native.dependencies" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +33,28 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="111" column="4" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
+            <state relative-caret-position="135">
+              <caret line="100" column="59" lean-forward="false" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="system.clj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/system.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -33,18 +63,8 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Numbers.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/lang/Numbers.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+            <state relative-caret-position="115">
+              <caret line="78" column="50" lean-forward="false" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -53,28 +73,28 @@
       <file leaf-file-name="user.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/user.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="22" />
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
+      <file leaf-file-name="tests.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/diningphils/c_m_async/tests.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2685">
-              <caret line="179" column="12" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
+            <state relative-caret-position="345">
+              <caret line="23" column="54" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="system.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+            <state relative-caret-position="124">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -83,8 +103,8 @@
       <file leaf-file-name="utils.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="53" column="33" lean-forward="false" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+            <state relative-caret-position="975">
+              <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -93,8 +113,8 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="76" column="13" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="76" selection-end-column="13" />
+            <state relative-caret-position="990">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -103,8 +123,64 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="139" column="30" lean-forward="true" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
+            <state relative-caret-position="1178">
+              <caret line="234" column="6" lean-forward="false" selection-start-line="234" selection-start-column="6" selection-end-line="234" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/core.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="246" column="45" lean-forward="false" selection-start-line="246" selection-start-column="4" selection-end-line="246" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SocketInputStream.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/net/SocketInputStream.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FutureTask.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/concurrent/FutureTask.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3420">
+              <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#16583#0" expanded="false" />
+                <element signature="e#5279#5280#0" expanded="false" />
+                <element signature="e#5320#5321#0" expanded="false" />
+                <element signature="e#5351#5352#0" expanded="false" />
+                <element signature="e#5386#5387#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Unsafe.class" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/rt.jar!/sun/misc/Unsafe.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="353" column="23" lean-forward="false" selection-start-line="353" selection-start-column="23" selection-end-line="353" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="async.clj" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.3.442/core.async-0.3.442.jar!/clojure/core/async.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3975">
+              <caret line="265" column="6" lean-forward="false" selection-start-line="265" selection-start-column="6" selection-end-line="265" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -113,8 +189,8 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="2562" column="6" lean-forward="false" selection-start-line="2562" selection-start-column="6" selection-end-line="2562" selection-end-column="6" />
+            <state relative-caret-position="446">
+              <caret line="5927" column="6" lean-forward="false" selection-start-line="5927" selection-start-column="6" selection-end-line="5927" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -123,8 +199,8 @@
       <file leaf-file-name="core.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="156" column="6" lean-forward="false" selection-start-line="156" selection-start-column="6" selection-end-line="156" selection-end-column="6" />
+            <state relative-caret-position="1410">
+              <caret line="94" column="6" lean-forward="false" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -133,7 +209,7 @@
       <file leaf-file-name="system.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/system.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="100">
               <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding />
             </state>
@@ -142,13 +218,15 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Clojure Namespace" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>:food-bowl</find>
-      <find>:food-amo</find>
-      <find>:run</find>
-      <find>*phil-count*</find>
-      <find>has-fork?</find>
       <find>dirty?</find>
       <find>has-request?</find>
       <find>(:id fork)</find>
@@ -156,7 +234,6 @@
       <find>debug-pr *phil-name* *phil-id*</find>
       <find>debug-thread</find>
       <find>assert</find>
-      <find>agents</find>
       <find>done</find>
       <find>(</find>
       <find>(vec</find>
@@ -174,6 +251,12 @@
       <find>receives</find>
       <find>debug-</find>
       <find>dirty=</find>
+      <find>agents</find>
+      <find>agent</find>
+      <find>send-mess</find>
+      <find>sys/system</find>
+      <find>:phils</find>
+      <find>:phil-threads</find>
     </findStrings>
     <replaceStrings>
       <replace>debug-pr</replace>
@@ -185,8 +268,10 @@
       <replace>*show-state*</replace>
       <replace>(:id @fork)</replace>
       <replace>debug-thread</replace>
+      <replace>phils</replace>
+      <replace>phil</replace>
+      <replace>:phil-states</replace>
       <replace>:phils</replace>
-      <replace>debug-thread</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -205,19 +290,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/waiter/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/res_hi/core.clj" />
-        <option value="$PROJECT_DIR$/dev/user.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/res_hi/system.clj" />
-        <option value="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/waiter/system.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/c_m/system.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/c_m/core.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/utils.clj" />
+        <option value="$PROJECT_DIR$/test/diningphils/c_m_async/tests.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/c_m_async/io.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/c_m_agents/system.clj" />
         <option value="$PROJECT_DIR$/src/diningphils/system.clj" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/dev/user.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/c_m_async/core.clj" />
+        <option value="$PROJECT_DIR$/src/diningphils/c_m_async/system.clj" />
       </list>
     </option>
   </component>
@@ -232,7 +322,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1436" />
+    <option name="width" value="1440" />
     <option name="height" value="873" />
   </component>
   <component name="ProjectView">
@@ -250,7 +340,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -287,7 +378,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="c_m" />
+              <option name="myItemId" value="c_m_async" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -371,7 +462,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="c_m_agents" />
+              <option name="myItemId" value="c_m_async" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -393,7 +484,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="c_m" />
+              <option name="myItemId" value="c_m_agents" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -413,8 +504,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -429,13 +519,14 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="cursive.last.file.extension./Users/paul/IdeaProjects/diningphils/src" value="clj" />
+    <property name="cursive.last.file.extension./Users/paul/IdeaProjects/diningphils/test" value="clj" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/diningphils/waiter" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1498071338465">{:repl-history {:ide [], :local [{:command &quot;(map (partial neighbor-index {:phil-id 0 :phil-count 5}) (range 5))&quot;, :offset 67, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(map #(neighbor-index {:phil-id % :phil-count 5}) (range 5))&quot;, :offset 33, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(map #(neighbor-index {:phil-id % :phil-count 5} %) (range 5))&quot;, :offset 50, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(map #(neighbor-index {:phil-id % :phil-count 5} (mod (inc %) 5)) (range 5))&quot;, :offset 63, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(assoc [nil] 0 1)&quot;, :offset 16, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(.getClass 1)&quot;, :offset 12, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(.getClass (atom nil))&quot;, :offset 20, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(class 1)&quot;, :offset 8, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks [(atom nil) (atom nil)]] (has-fork? 0))&quot;, :offset 66, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom nil) (atom nil)]] (has-fork? 0))&quot;, :offset 69, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom nil) (atom nil)]] (has-fork? 1))&quot;, :offset 67, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {}) (atom {})]] (has-fork? 1))&quot;, :offset 49, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {}) (atom {})]] (fork-for 1))&quot;, :offset 64, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {}) (atom {})] *phil-count* 5] (fork-for 1))&quot;, :offset 66, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {}) (atom {})] *phil-count* 5] (has-fork? 1))&quot;, :offset 78, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {:owner 1}) (atom {})] *phil-count* 5] (has-fork? 1))&quot;, :offset 90, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {:owner 1}) (atom {})] *phil-count* 5] (has-fork? 2))&quot;, :offset 88, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {:owner 1}) (atom {})] *phil-count* 5] (has-fork? (first *forks*)))&quot;, :offset 101, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(binding [*phil-id* 1 *forks* [(atom {:owner 1}) (atom {})] *phil-count* 5] (has-fork? (last *forks*)))&quot;, :offset 92, :ns &quot;diningphils.c-m-agents.core&quot;} {:command &quot;(initialized-fork 0)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(initialized-fork 1)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(initialized-fork 2)&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(map #(initialized-fork 2) (range 5))&quot;, :offset 35, :ns &quot;user&quot;} {:command &quot;(map #(initialized-fork %) (range 5))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(map #(request-flags-for %) (range 5))&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(println \&quot;here\&quot;)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(p/pp (init-fn {}))&quot;, :offset 19, :ns &quot;user&quot;} {:command &quot;(init-fn {})&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(p/pprint (init-fn {}))&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(nth (:agents sys/system) 0)&quot;, :offset 27, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;n\&quot; 1 \&quot;test\&quot;)&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(init) nil&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(run-phil sys/system 0)&quot;, :offset 23, :ns &quot;user&quot;} {:command &quot;(p/pprint (init))&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(p/pprint sys/system)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;@(first (:agents sys/system))&quot;, :offset 27, :ns &quot;user&quot;} {:command &quot;((set [1 (inc 1)]) 1)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;((set [1 (inc 1)]) 0)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;((set [1 (inc 1)]) 2)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;((set [1 (inc 1)]) 3)&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(#{1 (inc 1)} 1)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(#{1 (inc 1)} 0)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(#{1 (inc 1)} 2)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(#{1 (inc 1)} 3)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(mod (- 4 0) (count (:agents sys/system)))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(mod (- 0 4) (count (:agents sys/system)))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(mod (- 0 0) (count (:agents sys/system)))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 0] (neighbor-index 4))&quot;, :offset 42, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 0] (neighbor-index 0))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 0] (neighbor-index 1))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(take 5 (map #(binding [*phil-id*] [(neighbor-index %1) (neighbor-index %2)]) (cycle (range 5)) (rest (cycle (range 5)\n                                                                                                        ))))&quot;, :offset 227, :ns &quot;user&quot;} {:command &quot;(take 5 (map #(binding [*phil-id* %1] [(neighbor-index %1) (neighbor-index %2)]) (cycle (range 5)) (rest (cycle \n                                                                                                           (range 5)\n                                                                                                        ))))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(take 5 (map #(binding [*phil-id* %1] [%1 (neighbor-index %1) (neighbor-index %2)]) (cycle (range 5)) (rest (cycle \n                                                                                                           (range 5)\n                                                                                                        ))))&quot;, :offset 42, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 1))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 0))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 3))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 4))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1]} [:a 1] (constantly 0))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1]} [:a 2] (constantly 0))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1]} [:a 0] (constantly 0))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 1] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 2] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 0] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 4] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 3] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(print :a)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(log \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 2 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;) (await logger)&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(map agent-error (:agents sys/system))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(map :state (:agents sys/system))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(log \&quot;test\&quot;)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(set-debug #{1})&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;Name\&quot; 1 \&quot;line\&quot;)&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (thread-debug \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (debug-thread \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;(set-debug (range 5))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;debug-phils&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;hungry&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(fn-name hungry)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(shutdown-agents)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(init) (run-phil sys/system 0)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(send)&quot;, :offset 6} {:command &quot;(init) (run-phil sys/system 1)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(mod 5 0)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(init)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;system&quot;, :offset 6, :ns &quot;diningphils.system&quot;} {:command &quot;(some even? [1 2 3 4 5])&quot;, :offset 22, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot;])&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot; \&quot;2\&quot;])&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vector %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;sys/system&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(pprint sys/system)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(pprint (:phils sys/system))&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(pprint (map :state (:phils sys/system)))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(go)&quot;, :offset 3, :ns &quot;user&quot;} {:command &quot;(pprint (map #(:state @%) (:phils sys/system)))&quot;, :offset 24, :ns &quot;user&quot;}], :remote []}}</component>
+  <component name="ReplState" timestamp="1498415171011">{:repl-history {:ide [], :local [{:command &quot;(take 5 (map #(binding [*phil-id* %1] [(neighbor-index %1) (neighbor-index %2)]) (cycle (range 5)) (rest (cycle \n                                                                                                           (range 5)\n                                                                                                        ))))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(take 5 (map #(binding [*phil-id* %1] [%1 (neighbor-index %1) (neighbor-index %2)]) (cycle (range 5)) (rest (cycle \n                                                                                                           (range 5)\n                                                                                                        ))))&quot;, :offset 42, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 1))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 0))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 3))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 4] (neighbor-index 4))&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1]} [:a 1] (constantly 0))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1]} [:a 2] (constantly 0))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1]} [:a 0] (constantly 0))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 1] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 2] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 0] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 4] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(update-in {:a [0 1 2]} [:a 3] (constantly 0))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(print :a)&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(log \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 2 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;N\&quot; 1 \&quot;a\&quot; \&quot;b\&quot;) (await logger)&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(map agent-error (:agents sys/system))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(map :state (:agents sys/system))&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(log \&quot;test\&quot;)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(set-debug #{1})&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(debug-pr \&quot;Name\&quot; 1 \&quot;line\&quot;)&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (thread-debug \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;(binding [*phil-id* 1 *phil-name* \&quot;Name\&quot;] (debug-thread \&quot;line\&quot;))&quot;, :offset 55, :ns &quot;user&quot;} {:command &quot;debug-phils&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;hungry&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(fn-name hungry)&quot;, :offset 15, :ns &quot;user&quot;} {:command &quot;(shutdown-agents)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(init) (run-phil sys/system 0)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(send)&quot;, :offset 6} {:command &quot;(init) (run-phil sys/system 1)&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(mod 5 0)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;1&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(init)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;system&quot;, :offset 6, :ns &quot;diningphils.system&quot;} {:command &quot;(some even? [1 2 3 4 5])&quot;, :offset 22, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot;])&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(str/join \&quot; and \&quot; [\&quot;1\&quot; \&quot;2\&quot;])&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 17, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vec %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(def cnt 5) (mapv #(vector %1 %2) (range cnt) (take cnt (rest (cycle (range 5)))))&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;sys/system&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(pprint sys/system)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(pprint (:phils sys/system))&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(pprint (map :state (:phils sys/system)))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(pprint (map #(:state @%) (:phils sys/system)))&quot;, :offset 24, :ns &quot;user&quot;} {:command &quot;(set-debug (range 5))&quot;, :offset 21, :ns &quot;user&quot;} {:command &quot;(.indexOf (fn-name recv-fork) \\$)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(.indexOf (fn-name recv-fork) \&quot;$\&quot;)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(split-at (.indexOf (fn-name recv-fork) \&quot;$\&quot;) (fn-name recv-fork))&quot;, :offset 63, :ns &quot;user&quot;} {:command &quot;(subs  (fn-name recv-fork) (.indexOf (fn-name recv-fork) \&quot;$\&quot;))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(subs  (fn-name recv-fork) (inc (.indexOf (fn-name recv-fork) \&quot;$\&quot;)))&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(symbol (subs (fn-name recv-fork) (inc (.indexOf (fn-name recv-fork) \&quot;$\&quot;))))&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;(fn-name recv-fork)&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(conj (symbol (fn-name recv-fork)) '())&quot;, :offset 38, :ns &quot;user&quot;} {:command &quot;(cons (symbol (fn-name recv-fork)) '())&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(var 'recv-fork)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(var recv-fork)&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(def s recv-fork)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;(def s 'recv-fork)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;s&quot;, :offset 1, :ns &quot;user&quot;} {:command &quot;(var s)&quot;, :offset 6, :ns &quot;user&quot;} {:command &quot;(def f (future (pprint (a/&lt;!! c))))&quot;, :offset 7, :ns &quot;user&quot;} {:command &quot;recv-fork&quot;, :offset 9, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c recv-fork)&quot;, :offset 3, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c (list println \&quot;Hello\&quot;))&quot;, :offset 29, :ns &quot;user&quot;} {:command &quot;(cons println '(\&quot;Hello\&quot;))&quot;, :offset 0, :ns &quot;user&quot;} {:command &quot;(def f (future (let [f (a/&lt;!! c)] (apply (first f) (rest f)))))&quot;, :offset 61, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c (cons println '(\&quot;Hello\&quot;)))&quot;, :offset 25, :ns &quot;user&quot;} {:command &quot;(use)&quot;, :offset 4, :ns &quot;diningphils.c-m-async.core&quot;} {:command &quot;(use-some-func \&quot;me\&quot;)&quot;, :offset 18, :ns &quot;diningphils.c-m-async.core&quot;} {:command &quot;(use-use)&quot;, :offset 8, :ns &quot;user&quot;} {:command &quot;use-use&quot;, :offset 7, :ns &quot;diningphils.c-m-async.system&quot;} {:command &quot;go&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(random-from-range [1 10])&quot;, :offset 26, :ns &quot;user&quot;} {:command &quot;(assoc [false] 0 true)&quot;, :offset 13, :ns &quot;user&quot;} {:command &quot;(assoc [] 5 true)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(assoc []1 true)&quot;, :offset 10, :ns &quot;user&quot;} {:command &quot;(assoc [] 0 true)&quot;, :offset 11, :ns &quot;user&quot;} {:command &quot;(def c (a/chan 1))&quot;, :offset 18, :ns &quot;user&quot;} {:command &quot;(def f (future (println (a/&lt;!! c))))&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(a/&gt;!! c \&quot;Hey!\&quot;)&quot;, :offset 14, :ns &quot;user&quot;} {:command &quot;(def f (future (println (a/&lt;!! c)) \&quot;Done\&quot;))&quot;, :offset 43, :ns &quot;user&quot;} {:command &quot;(future-cancel f)&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;@f&quot;, :offset 2, :ns &quot;user&quot;} {:command &quot;(identical? c (last (a/alts!! [c])))&quot;, :offset 20, :ns &quot;user&quot;} {:command &quot;(def c (a/thread (Thread/sleep 1000) nil)) (a/alts!! [c])&quot;, :offset 40, :ns &quot;user&quot;} {:command &quot;(def c (a/thread (Thread/sleep 1000))) (a/alts!! [c])&quot;, :offset 36, :ns &quot;user&quot;} {:command &quot;(update-in {:a [1 2]} [:a 0] inc)&quot;, :offset 32, :ns &quot;user&quot;} {:command &quot;(dissoc 1 [1 2 3])&quot;, :offset 16, :ns &quot;user&quot;} {:command &quot;()&quot;, :offset 1} {:command &quot;(def c (a/thread (Thread/sleep 1000) \&quot;Done\&quot;)) (a/alts!! [c])&quot;, :offset 60, :ns &quot;user&quot;} {:command &quot;(a/alts!! [c])&quot;, :offset 0, :ns &quot;user&quot;} {:command &quot;(remove #(= 1 %) [0 1 2])&quot;, :offset 23, :ns &quot;user&quot;} {:command &quot;(vec (remove #(= 1 %) [0 1 2]))&quot;, :offset 5, :ns &quot;user&quot;} {:command &quot;(go)&quot;, :offset 4, :ns &quot;user&quot;} {:command &quot;(try (throw (UnsupportedOperationException.) (catch Exception e)))&quot;, :offset 66, :ns &quot;user&quot;} {:command &quot;(try (throw (UnsupportedOperationException.)) (catch Exception e))&quot;, :offset 45, :ns &quot;user&quot;} {:command &quot;(go {:food-amount 5})&quot;, :offset 19, :ns &quot;user&quot;}], :remote []}}</component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -508,10 +599,12 @@
     <configuration default="true" type="ClojureScriptRunConfiguration" factoryName="Clojure Script">
       <module name="" />
       <setting name="path" value="" />
+      <setting name="namespace" value="" />
+      <setting name="useLein" value="false" />
+      <setting name="profiles" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="" />
-      <setting name="repl" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
@@ -793,31 +886,31 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1436" height="873" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="873" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.4913917" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="100" y="123" width="1236" height="673" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="123" width="1236" height="673" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32998565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45466155" sideWeight="0.56886655" order="11" side_tool="true" content_ui="tabs" x="271" y="102" width="1057" height="751" />
+      <window_info id="REPL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38314176" sideWeight="0.5307582" order="11" side_tool="true" content_ui="tabs" x="271" y="102" width="1057" height="751" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38314176" sideWeight="0.46924177" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45466155" sideWeight="0.43113342" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.034433287" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19296987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32950193" sideWeight="0.3507891" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25681493" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26752505" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5236271" sideWeight="0.47704446" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45721585" sideWeight="0.38952655" order="7" side_tool="false" content_ui="tabs" x="102" y="413" width="1177" height="466" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48659003" sideWeight="0.397711" order="7" side_tool="false" content_ui="tabs" x="98" y="67" width="1177" height="713" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2707535" sideWeight="0.46852645" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -854,6 +947,12 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="95" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/diningphils/c_m_async/system.clj</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -865,19 +964,92 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="102" />
+      <option name="time" value="123" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj">
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
-          <caret line="157" column="19" lean-forward="false" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+        <state relative-caret-position="1095">
+          <caret line="73" column="37" lean-forward="false" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/string.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3270">
+          <caret line="218" column="6" lean-forward="false" selection-start-line="218" selection-start-column="6" selection-end-line="218" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="0" lean-forward="true" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2445">
+          <caret line="163" column="33" lean-forward="false" selection-start-line="163" selection-start-column="33" selection-end-line="163" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.3.442/core.async-0.3.442.jar!/clojure/core/async.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3975">
+          <caret line="265" column="6" lean-forward="false" selection-start-line="265" selection-start-column="6" selection-end-line="265" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63495">
+          <caret line="4233" column="15" lean-forward="true" selection-start-line="4233" selection-start-column="15" selection-end-line="4233" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="94" column="6" lean-forward="false" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2445">
+          <caret line="163" column="68" lean-forward="false" selection-start-line="163" selection-start-column="68" selection-end-line="163" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj" />
     <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -890,7 +1062,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -902,15 +1073,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
+    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj" />
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/core.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="62" column="25" lean-forward="false" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
@@ -918,35 +1082,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init3737873730248953391.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj" />
+    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init3737873730248953391.clj" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/zip/ZipFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="797" column="31" lean-forward="false" selection-start-line="797" selection-start-column="31" selection-end-line="797" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,19 +1095,155 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="2042" column="24" lean-forward="false" selection-start-line="2042" selection-start-column="24" selection-end-line="2042" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/net/SocketInputStream.java">
+    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init4669370045468018683.clj" />
+    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init5189955675190345570.clj" />
+    <entry file="file://$PROJECT_DIR$/project.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
+        <state relative-caret-position="135">
+          <caret line="9" column="70" lean-forward="false" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/lang/Numbers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3585">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init4669370045468018683.clj">
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/string.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3270">
+          <caret line="218" column="6" lean-forward="false" selection-start-line="218" selection-start-column="6" selection-end-line="218" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="94" column="6" lean-forward="false" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj" />
+    <entry file="file://$PROJECT_DIR$/test/diningphils/c_m_async.clj" />
+    <entry file="file://$USER_HOME$/Documents/Prajna Inc/Cognitect/HSBC/clojure-training-20170327/dev-environment/src/example.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/io.clj" />
+    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="6" lean-forward="false" selection-start-line="65" selection-start-column="6" selection-end-line="65" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.3.442/core.async-0.3.442.jar!/clojure/core/async.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3975">
+          <caret line="265" column="6" lean-forward="false" selection-start-line="265" selection-start-column="6" selection-end-line="265" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/concurrent/FutureTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3420">
+          <caret line="265" column="0" lean-forward="false" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#16583#0" expanded="false" />
+            <element signature="e#5279#5280#0" expanded="false" />
+            <element signature="e#5320#5321#0" expanded="false" />
+            <element signature="e#5351#5352#0" expanded="false" />
+            <element signature="e#5386#5387#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1178">
+          <caret line="234" column="6" lean-forward="false" selection-start-line="234" selection-start-column="6" selection-end-line="234" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="78" column="50" lean-forward="false" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/diningphils/c_m_async/tests.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="54" lean-forward="false" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="5927" column="6" lean-forward="false" selection-start-line="5927" selection-start-column="6" selection-end-line="5927" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="100" column="59" lean-forward="false" selection-start-line="100" selection-start-column="51" selection-end-line="100" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -974,10 +1251,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///private/var/folders/vp/4frf0b5n3wl4xb8rvmc955kr0000gn/T/form-init5189955675190345570.clj">
+    <entry file="file://$PROJECT_DIR$/dev/user.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -990,18 +1267,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project.clj">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/net/SocketInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="70" lean-forward="false" selection-start-line="9" selection-start-column="70" selection-end-line="9" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/diningphills/c_m/tests.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="3" lean-forward="false" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
+        <state relative-caret-position="147">
+          <caret line="93" column="23" lean-forward="false" selection-start-line="93" selection-start-column="23" selection-end-line="93" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1014,114 +1283,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/core.clj">
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/core.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="76" column="13" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="76" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/lang/Numbers.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="310" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/res_hi/system.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="156" column="6" lean-forward="false" selection-start-line="156" selection-start-column="6" selection-end-line="156" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/waiter/system.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="64" column="38" lean-forward="false" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="175" column="12" lean-forward="false" selection-start-line="175" selection-start-column="12" selection-end-line="175" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2685">
-          <caret line="179" column="12" lean-forward="false" selection-start-line="179" selection-start-column="12" selection-end-line="179" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core_old.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/utils.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="53" column="33" lean-forward="false" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/user.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="139" column="30" lean-forward="true" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/clojure/1.8.0/clojure-1.8.0.jar!/clojure/core.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="2562" column="6" lean-forward="false" selection-start-line="2562" selection-start-column="6" selection-end-line="2562" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_agents/system.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="111" column="4" lean-forward="true" selection-start-line="111" selection-start-column="4" selection-end-line="111" selection-end-column="4" />
+        <state relative-caret-position="432">
+          <caret line="246" column="45" lean-forward="false" selection-start-line="246" selection-start-column="4" selection-end-line="246" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/diningphils/system.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="59" column="21" lean-forward="false" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="21" />
+        <state relative-caret-position="124">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/diningphils/c_m_async/system.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
