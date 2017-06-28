@@ -167,7 +167,10 @@
     (assoc :state :done)
     (show-state)))
 
-(defn fork-state-change [[state-already-changed state] side-index]
+(defn fork-state-change
+  "I implement the C-M guarded command which controls state changes for a single fork. I return the new state, and an
+   indication of whether I or any previous invocation changed the state."
+  [[state-already-changed state] side-index]
   (let [
         neighbor (nth *neighbors* side-index)
         fork (nth *forks* side-index)
@@ -195,7 +198,10 @@
                       :else state)]
       [(or request-fork? send-fork? state-already-changed) new-state])))
 
-(defn start-eating? [[state-already-changed state]]
+(defn start-eating?
+  "Check to see if I can start eating. If so, I update the state and return it, along with an indication that I or
+  previous invocations of fork-state-change changed the state"
+  [[state-already-changed state]]
   (let [start-eating? (and (hungry? state) (has-fork? (first *forks*)) (has-fork? (last *forks*)))]
     (debug-thread "check state: start-eating?=" start-eating?)
     (let [new-state
@@ -207,7 +213,11 @@
       (show-state new-state)
       [state-already-changed new-state])))
 
-(defn state-change [state]
+(defn state-change
+  "Implement the guarded command that drives the C-M resource allocation algorithm. I run state changes for each fork
+   I own, and also check to see if I can now start eating. I do this until teh system is stable i.e. no more state
+   changes occur"
+  [state]
   ;; loop over the state machine until it tells us not to continue
   ;; Finally return the new state
   (loop [current-state state]
@@ -220,7 +230,10 @@
         (recur next-state)
         next-state))))
 
-(defn execute-message [state fn args]
+(defn execute-message
+  "Execute an agent message, binding some thread-local state. Apply the message function and then act on any state
+  change"
+  [state fn args]
   (binding [*phil-id* (:phil-id state)
             *phil-name* (:phil-name state)
             *forks* (:forks state)
