@@ -1,3 +1,57 @@
+;;
+;; Dining philosophers solution using Chandy-Misra algorithm
+;; https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
+;;
+;; Copyright 2015 Prajna Inc.
+;;
+;; Licensed under the Apache License, Version 2.0 (the "License");
+;; you may not use this file except in compliance with the License.
+;; You may obtain a copy of the License at
+;;
+;;     http://www.apache.org/licenses/LICENSE-2.0
+;;
+;; Unless required by applicable law or agreed to in writing, software
+;; distributed under the License is distributed on an "AS IS" BASIS,
+;; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+;; See the License for the specific language governing permissions and
+;; limitations under the License.
+;;
+;; Edsger Dijkstra's famous dining philosophers problem, solved using the using Chandy-Misra algorithm and Clojure
+;; core.async
+;;
+;; See the Chandry-Misra paper (C-M) at https://www.cs.utexas.edu/users/misra/scannedPdf.dir/DrinkingPhil.pdf
+;;
+;; Philosphers are represented as threads, which hold part of the philospher state as thread-locals.
+;;
+;; Each is a state machine which implements the main C-M guarded command. State changes are driven by message sends
+;; through channels to and from ajoining philosophers. When a philosopher gets hungry, it requests the forks it doesn't
+;; have, then begins eating when they arrive. After a while, it becomes sated, and goes back to thinking until it
+;; becomes hungry again.
+;;
+;; Messages between philosophers are sent as evaluable lists of function specifications. These are execute ddirectly
+;; by the receiver to trigger state changes.
+;;
+;; For convenience, message execution is wrapped by a function (execute-message) that places the current state into
+;; thread-local vars.
+;;
+;; 'execute-message' also takes care of calling the main state machine function (state-changed). This implements
+;; the C-M guarded command as described above. This returns a new state map that is the new state of the philosopher
+;;
+;; The forks themselves are represented explicitly by a vector of atoms holding the state of each fork. This
+;; indicates whether it is dirty or not. It also includes who is currently using it, which is solely for monitoring
+;; purposes. Note that we do not need transactional semantics on the fork state update, because the message sequencing
+;; of the C-M algorith ensures that only one philosopher will ever try to update the state at any time.
+;;
+;; There is a fixed amount of food, and this goes on until all the food is gone. When a philosopher
+;; goes hungry and there is no food left it rests. The system is done when all philosophers are resting.
+;;
+;; To run with status display, evaluate:
+;;
+;; (go)
+;;
+;; It can be stopped at any time by pressing any key
+;;
+
 (ns diningphils.c-m-async.core
   (:require [diningphils.utils :refer :all]
             [diningphils.system :as sys]

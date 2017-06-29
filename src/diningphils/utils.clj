@@ -16,6 +16,7 @@
 ;; Some utility functions for solving Edsger Dijkstra's famous dining philosophers problem
 ;;
 ;;
+
 (ns diningphils.utils
   (:require [clojure.string :as str]))
 
